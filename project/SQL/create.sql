@@ -1,4 +1,4 @@
-create table amministatore(
+create table amministratore(
 nome varchar2(30) not null,
 cognome varchar2(30) not null,
 username varchar2(30),
@@ -42,5 +42,5 @@ constraint p_corsocorsista primary key(codCorso,codCorsista),
 constraint f_codCorso foreign key(codCorso) references corso(codCorso),
 constraint f_codCorsista foreign key(codCorsista) references corsista(codCorsista));
 
-create sequence CodGeneratorCorso;
-create sequence CodGeneratorCorsista;
+create sequence CodGeneratorCorso_seq;
+create sequence CodGeneratorCorsista_seq;
