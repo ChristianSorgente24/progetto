@@ -25,17 +25,17 @@ public class StatsUtility implements DAOConstants{
 		conn = DBAccess.getConnection();
 	}
 	
-	public static int numeroCorsistiTotali() throws ClassNotFoundException, DAOException, IOException {
+	public  int numeroCorsistiTotali() throws ClassNotFoundException, DAOException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
 		return cBC.getAll().length;	
 	}
 	
-	public static Corsista[] elencoCorsisti() throws ClassNotFoundException, DAOException, IOException {
+	public  Corsista[] elencoCorsisti() throws ClassNotFoundException, DAOException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
 		return cBC.getAll();
 	}
 	
-	public static String corsoPiuFrequentato() throws DAOException {
+	public  String corsoPiuFrequentato() throws DAOException {
 		String corsoPiuFreq = null;
 		try {
 			PreparedStatement stmt = conn.prepareStatement(SELECT_CORSO_PIU_FREQUENTATO);
@@ -48,7 +48,7 @@ public class StatsUtility implements DAOConstants{
 		}	
 	}
 	
-	public static Date inizioUltimoCorso() throws DAOException {
+	public  Date inizioUltimoCorso() throws DAOException {
 		Date inizioCorso = null;
 		try {
 			PreparedStatement stmt = conn.prepareStatement(SELECT_CORSO_RECENTE);
@@ -64,7 +64,7 @@ public class StatsUtility implements DAOConstants{
 		}	
 	}
 	
-	public static double durataMediaCorsi() throws DAOException {
+	public  double durataMediaCorsi() throws DAOException {
 		double giorniAvg = 0;
 		try {
 			PreparedStatement stmt = conn.prepareStatement(SELECT_AVG_CORSI);
@@ -77,7 +77,7 @@ public class StatsUtility implements DAOConstants{
 		}
 	}
 	
-	public static int numCommenti(long codCorso) throws DAOException {
+	public  int numCommenti(long codCorso) throws DAOException {
 		int numCommenti = 0;
 		try {
 			PreparedStatement stmt = conn.prepareStatement(SELECT_NUM_COMMENTI);
@@ -91,7 +91,7 @@ public class StatsUtility implements DAOConstants{
 		}
 	}
 	
-	public static LinkedList<Docente> docenteMaxCorsi() throws DAOException {
+	public  LinkedList<Docente> docenteMaxCorsi() throws DAOException {
 		LinkedList<Docente> docenti = new LinkedList<Docente>(); 
 		long codice = 0;
 		try {
@@ -107,7 +107,7 @@ public class StatsUtility implements DAOConstants{
 		}
 	}
 	
-	public static LinkedList<Corso> corsiDisponibili() throws DAOException {
+	public  LinkedList<Corso> corsiDisponibili() throws DAOException {
 		LinkedList<Corso> corsi = new LinkedList<Corso>(); 
 		long codice = 0;
 		try {

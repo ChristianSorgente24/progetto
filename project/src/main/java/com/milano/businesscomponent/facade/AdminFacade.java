@@ -145,7 +145,8 @@ private static AdminFacade cF;
 
 	public LinkedList<Corso> corsiDisponibili()
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.corsiDisponibili();
+		StatsUtility st = new StatsUtility();
+		return st.corsiDisponibili();
 	}
 	
 	
@@ -153,41 +154,48 @@ private static AdminFacade cF;
 	
 	public LinkedList<Docente> docenteMaxCorsi()
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.docenteMaxCorsi();
+		StatsUtility st = new StatsUtility();
+		return st.docenteMaxCorsi();
 	}
 	
 	
 	
 	public int numeroCommenti(long codCorso)
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.numCommenti(codCorso);
+		StatsUtility st = new StatsUtility();
+		return st.numCommenti(codCorso);
 	}
 	
 	
 	public Double durataMediaCorsi()
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.durataMediaCorsi();
+		StatsUtility st = new StatsUtility();
+		return st.durataMediaCorsi();
 	}
 	
 	public Date inizioUltimoCorso()
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.inizioUltimoCorso();
+		StatsUtility st = new StatsUtility();
+		return st.inizioUltimoCorso();
 	}
 	
 	
 	public String corsoPiuFrequentato()
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.corsoPiuFrequentato();
+		StatsUtility st = new StatsUtility();
+		return st.corsoPiuFrequentato();
 	}
 	
 	public Corsista[] elencoCorsisti()
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.elencoCorsisti();
+		StatsUtility st = new StatsUtility();
+		return st.elencoCorsisti();
 	}
 	
 	public int numeroCorsistiTotali()
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.numeroCorsistiTotali();
+		StatsUtility st = new StatsUtility();
+		return st.numeroCorsistiTotali();
 	}
 	
 	
