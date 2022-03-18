@@ -143,7 +143,7 @@ private static AdminFacade cF;
 	
 //--------------------------------------------------------STATS---------------------------------------------	
 
-	public Corso[] corsiDisponibili()
+	public LinkedList<Corso> corsiDisponibili()
 			throws ClassNotFoundException, DAOException, IOException {
 		return StatsUtility.corsiDisponibili();
 	}
@@ -158,9 +158,9 @@ private static AdminFacade cF;
 	
 	
 	
-	public int numeroCommenti()
+	public int numeroCommenti(long codCorso)
 			throws ClassNotFoundException, DAOException, IOException {
-		return StatsUtility.numeroCommenti();
+		return StatsUtility.numCommenti(codCorso);
 	}
 	
 	
