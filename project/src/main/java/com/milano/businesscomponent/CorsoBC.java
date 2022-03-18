@@ -2,6 +2,7 @@ package com.milano.businesscomponent;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import com.milano.architecture.dao.CorsoDAO;
 import com.milano.architecture.dao.DAOException;
@@ -28,31 +29,53 @@ public class CorsoBC {
 	}
 
 	public void createCorso(Corso corso) throws DAOException, IOException, ClassNotFoundException {
-		
-		corso.setCodCorso(CodGeneratorCorso.getInstance().getNextId());
-		
-		if (validazioneDate(corso))
-			CorsoDAO.getFactory().create(conn, corso);
-		else
-			throw new IOException();
+		try {
+			corso.setCodCorso(CodGeneratorCorso.getInstance().getNextId());
+
+			if (validazioneDate(corso))
+				CorsoDAO.getFactory().create(conn, corso);
+			else
+				throw new IOException();
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
 	}
 
 	public void updateCorso(Corso corso) throws DAOException, IOException {
-		if (validazioneDate(corso))
-			CorsoDAO.getFactory().update(conn, corso);
-		else
-			throw new IOException();
+		try {
+			if (validazioneDate(corso))
+				CorsoDAO.getFactory().update(conn, corso);
+			else
+				throw new IOException();
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
 	}
 
 	public void deleteCorso(Corso corso) throws DAOException {
-		CorsoDAO.getFactory().delete(conn, corso);
+		try {
+			CorsoDAO.getFactory().delete(conn, corso);
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+
 	}
 
 	public Corso getByCodCorso(long codCorso) throws DAOException {
-		return CorsoDAO.getFactory().getByCod(conn, codCorso);
+
+		try {
+			return CorsoDAO.getFactory().getByCod(conn, codCorso);
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
 	}
 
 	public Corso[] getAll() throws DAOException {
-		return CorsoDAO.getFactory().getAll(conn);
+
+		try {
+			return CorsoDAO.getFactory().getAll(conn);
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
 	}
 }
