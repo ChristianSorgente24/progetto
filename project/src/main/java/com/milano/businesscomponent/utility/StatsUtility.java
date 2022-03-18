@@ -12,6 +12,7 @@ import com.milano.architecture.dao.CorsoDAO;
 import com.milano.architecture.dao.DAOConstants;
 import com.milano.architecture.dao.DAOException;
 import com.milano.architecture.dao.DocenteDAO;
+import com.milano.architecture.dbaccess.DBAccess;
 import com.milano.businesscomponent.CorsistaBC;
 import com.milano.businesscomponent.model.Corsista;
 import com.milano.businesscomponent.model.Corso;
@@ -19,6 +20,10 @@ import com.milano.businesscomponent.model.Docente;
 
 public class StatsUtility implements DAOConstants{
 	private static Connection conn;
+	
+	public StatsUtility() throws ClassNotFoundException, DAOException, IOException {
+		conn = DBAccess.getConnection();
+	}
 	
 	public static int numeroCorsistiTotali() throws ClassNotFoundException, DAOException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
