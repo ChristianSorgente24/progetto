@@ -24,7 +24,8 @@ public class DocenteDAO extends DocenteDAOAdapter  implements DAOConstants {
 		}
 	}
 	
-	public Docente getByCod(Connection conn,Long codDocente) throws DAOException {
+	@Override
+	public Docente getByCod(Connection conn, long codDocente) throws DAOException {
 		Docente docente = null;
 		PreparedStatement ps;
 		try {

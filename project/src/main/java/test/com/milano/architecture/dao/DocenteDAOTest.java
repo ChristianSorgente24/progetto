@@ -1,7 +1,5 @@
 package test.com.milano.architecture.dao;
 
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.sql.Connection;
@@ -27,11 +25,12 @@ class DocenteDAOTest {
 	@Test
 	void test() {
 		try {
-			 Docente docente = DocenteDAO.getFactory().getByCod(conn, 1567);
+			 Docente docente = DocenteDAO.getFactory().getByCod(DBAccess.getConnection(), 1567);
 			 System.out.println(docente.toString());
 			 
 		}catch (Exception e) {
 			e.printStackTrace();
+			System.out.println(e.getMessage());
 			fail("errore");
 		}
 	}
