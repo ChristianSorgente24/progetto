@@ -2,6 +2,7 @@ package com.milano.businesscomponent.facade;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.LinkedList;
 
 import com.milano.architecture.dao.DAOException;
 import com.milano.businesscomponent.CorsistaBC;
@@ -150,7 +151,7 @@ private static AdminFacade cF;
 	
 	
 	
-	public Docente[] docenteMaxCorsi()
+	public LinkedList<Docente> docenteMaxCorsi()
 			throws ClassNotFoundException, DAOException, IOException {
 		return StatsUtility.docenteMaxCorsi();
 	}
