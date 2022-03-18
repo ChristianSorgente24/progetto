@@ -16,6 +16,6 @@ public class StatsUtility {
 	public static Corsista[] elencoCorsisti() throws ClassNotFoundException, DAOException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
 		return cBC.getAll();
-	}
+	}//commento
 	
 }
