@@ -12,7 +12,7 @@ import com.milano.businesscomponent.model.Corso;
 
 public class CorsoDAO implements GenericDAO<Corso>, DAOConstants {
 
-	public static CorsoDAO getInstance() throws DAOException {
+	public static CorsoDAO getFactory() throws DAOException {
 		return new CorsoDAO();
 	}
 
