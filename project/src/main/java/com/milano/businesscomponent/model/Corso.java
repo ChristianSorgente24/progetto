@@ -12,10 +12,10 @@ public class Corso implements DAOConstants {
 	private Date dataFineCorso;
 	private Double costoCorso;
 	private String aulaCorso;
-	private Long codDocente;
+	private long codDocente;
 
 	public Corso(long codCorso, String nomeCorso, Date dataInizioCorso, Date dataFineCorso, Double costoCorso,
-			String aulaCorso, Long codDocente) {
+			String aulaCorso, long codDocente) {
 		super();
 		this.codCorso = codCorso;
 		this.nomeCorso = nomeCorso;

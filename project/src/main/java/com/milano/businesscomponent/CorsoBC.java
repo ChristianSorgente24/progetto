@@ -3,6 +3,7 @@ package com.milano.businesscomponent;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.milano.architecture.dao.CorsoDAO;
 import com.milano.architecture.dao.DAOException;
@@ -77,5 +78,19 @@ public class CorsoBC {
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
+	}
+	
+	public Corso[] searchCorso(String query) throws DAOException {
+		ArrayList<Corso> lista = new ArrayList<Corso>();
+		String[] criterioRicerca = query.toLowerCase().split(" ");
+		
+		for(Corso c: getAll())
+			for(String s: criterioRicerca)
+				if(c.getNomeCorso().toLowerCase().contains(s))
+					lista.add(c);
+		Corso[] corsi = new Corso[lista.size()];
+		for(int i = 0; i < lista.size(); i++)
+			corsi[i] = lista.get(i);
+		return corsi;
 	}
 }
