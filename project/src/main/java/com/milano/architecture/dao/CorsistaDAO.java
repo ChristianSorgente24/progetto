@@ -9,7 +9,6 @@ import java.sql.Statement;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import com.milano.architecture.dao.DAOException;
 import com.milano.businesscomponent.model.Corsista;
 
 public class CorsistaDAO implements GenericDAO<Corsista>, DAOConstants{
