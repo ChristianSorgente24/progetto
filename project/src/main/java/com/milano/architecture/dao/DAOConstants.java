@@ -39,10 +39,10 @@ public interface DAOConstants {
 	//N4  Durata media dei corsi ( in giorni lavorativi )
 	String SELECT_AVG_CORSI = "SELECT  avg((dataFineCorso-dataInizioCorso) -2*FLOOR((dataFineCorso-dataInizioCorso)/7)-DECODE(SIGN(TO_CHAR(dataFineCorso,'D')- TO_CHAR(dataInizioCorso,'D')),-1,2,0)+DECODE(TO_CHAR(dataInizioCorso,'D'),7,1,0)- DECODE(TO_CHAR(dataFineCorso,'D'),7,1,0)) as media FROM corso";
 	//N5 Numero di commenti presenti
-	String SELECT_NUM_COMMENTI = "SELECT count(commentiCorso) from corsocorsista";
+	String SELECT_NUM_COMMENTI = "SELECT count(commentiCorso) from corsocorsista where codCorso = ?";
 	//N6 -> SELECT_CORSISTA Elenco corsisti
 	//N7 Docente che può tenere più tipologie di corso
-	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc fetch first 1 row only";
+	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc";
 	//N8 Corsi con posti disponibili
 	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) <= 12";
 	}
