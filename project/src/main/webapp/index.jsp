@@ -8,7 +8,7 @@
 <title>Index</title>
 </head>
 <body>
-	<jsp:include page="nav.html"/>
+	<jsp:include page="nav.jsp"/>
 	<h1>Prova commit 2</h1>
 </body>
 	
