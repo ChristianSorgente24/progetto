@@ -32,7 +32,7 @@ public class CorsoBC {
 	public void createCorso(Corso corso) throws DAOException, IOException, ClassNotFoundException {
 		try {
 			corso.setCodCorso(CodGeneratorCorso.getInstance().getNextId());
-
+			
 			if (validazioneDate(corso))
 				CorsoDAO.getFactory().create(conn, corso);
 			else

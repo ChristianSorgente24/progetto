@@ -36,11 +36,11 @@ class CorsoBCTest {
 			corso.setDataFineCorso(fine.getTime());
 				cBC.updateCorso(corso);*/
 				
-			fine = new GregorianCalendar(2002, 1, 25, 0, 0, 0);
+			/*fine = new GregorianCalendar(2002, 1, 25, 0, 0, 0);
 			corso.setDataFineCorso(fine.getTime());
 
 			cBC.updateCorso(corso);
-			assertNotNull(corso);
+			assertNotNull(corso);*/
 			
 			Corso[] corsi = cBC.getAll();
 			for(Corso x :corsi)
@@ -51,9 +51,9 @@ class CorsoBCTest {
 			for(Corso x :corsi)
 				System.out.println(x.toString());
 			
-			cBC.deleteCorso(corso);
+			/*cBC.deleteCorso(corso);
 			cBC.deleteCorso(corso2);
-			System.out.println("Corsi Eliminati");
+			System.out.println("Corsi Eliminati");*/
 
 		} catch (IOException exc) {
 			System.out.println("Date non valide");
