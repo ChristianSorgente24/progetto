@@ -32,4 +32,12 @@ public interface DAOConstants {
 	
 	//statistiche
 	String SELECT_CORSO_RECENTE = "Select MIN(dataInizioCorso) from corso";
+	
+	//QUERY PER STATISTICHE
+	//N2
+	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc fetch first 1 row only";
+	//N7
+	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) <= 12";
+	//N8
+	String SELECT_AVG_CORSI = "SELECT  avg((dataFineCorso-dataInizioCorso) -2*FLOOR((dataFineCorso-dataInizioCorso)/7)-DECODE(SIGN(TO_CHAR(dataFineCorso,'D')- TO_CHAR(dataInizioCorso,'D')),-1,2,0)+DECODE(TO_CHAR(dataInizioCorso,'D'),7,1,0)- DECODE(TO_CHAR(dataFineCorso,'D'),7,1,0)) as media FROM corso";
 }
