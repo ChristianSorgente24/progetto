@@ -6,6 +6,7 @@ import java.sql.Connection;
 import com.milano.architecture.dao.CorsoDAO;
 import com.milano.architecture.dao.DAOException;
 import com.milano.architecture.dbaccess.DBAccess;
+import com.milano.businesscomponent.idgenerator.CodGeneratorCorso;
 import com.milano.businesscomponent.model.Corso;
 
 public class CorsoBC {
@@ -26,7 +27,10 @@ public class CorsoBC {
 		conn = DBAccess.getConnection();
 	}
 
-	public void createCorso(Corso corso) throws DAOException, IOException {
+	public void createCorso(Corso corso) throws DAOException, IOException, ClassNotFoundException {
+		
+		corso.setCodCorso(CodGeneratorCorso.getInstance().getNextId());
+		
 		if (validazioneDate(corso))
 			CorsoDAO.getFactory().create(conn, corso);
 		else
