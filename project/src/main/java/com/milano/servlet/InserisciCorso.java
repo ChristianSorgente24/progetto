@@ -1,7 +1,8 @@
 package com.milano.servlet;
 
 import java.io.IOException;
-import java.util.GregorianCalendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,18 +21,31 @@ public class InserisciCorso extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		GregorianCalendar inizio = new GregorianCalendar(2002, 1, 15, 0, 0, 0);
-		GregorianCalendar fine = new GregorianCalendar(2002, 1, 21, 0, 0, 0);
 
-		Corso corso = new Corso(1, "corso1", inizio.getTime(), fine.getTime(), 100.00, "1A", 1567);
+		Corso corso = new Corso();
+		corso.setCodCorso(Long.parseLong(request.getParameter("codCorso")));
+		corso.setNomeCorso(request.getParameter("nomeCorso"));
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			corso.setDataInizioCorso(format.parse(request.getParameter("dataInizioCorso")));
+			corso.setDataFineCorso(format.parse(request.getParameter("dataFineCorso")));
+		} catch (ParseException exc) {
+			exc.printStackTrace();
+			throw new ServletException(exc);
+		}
+		corso.setCostoCorso(Double.parseDouble(request.getParameter("costoCorso")));
+		corso.setAulaCorso(request.getParameter("aulaCorso"));
+		corso.setCodDocente(Long.parseLong(request.getParameter("codDocente")));
+		
+		response.sendRedirect("index.jsp");
 		
 		try {
 			CorsoBC cBC = new CorsoBC();
 			cBC.createCorso(corso);
-		} catch (DAOException | ClassNotFoundException | IOException  e) {
+		} catch (DAOException | ClassNotFoundException | IOException e) {
 			e.printStackTrace();
-			throw new ServletException(e);	
-		} 	
+			throw new ServletException(e);
+		}
 	}
 
 }
