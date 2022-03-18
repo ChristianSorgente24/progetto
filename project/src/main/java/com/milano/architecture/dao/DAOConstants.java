@@ -30,14 +30,19 @@ public interface DAOConstants {
 	String SELECT_ADMINPASS = "Select codAdmin from amministratore where username = ?";
 	
 	//statistiche
-	String SELECT_CORSO_RECENTE = "Select MAX(dataInizioCorso) from corso";
+	//N1 Numero corsisti totali.
+	String SELECT_TOT_CORSISTI = "select count(codCorsista) from corsista";
+    //N2 Nome del corso più frequentato
 	String SELECT_CORSO_PIU_FREQUENTATO = "Select codCorso from corsocorsista group by codCorso order by count(*) desc fetch first 1 row only";
-	
-	//QUERY PER STATISTICHE
-	//N2
-	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc fetch first 1 row only";
-	//N7
-	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) <= 12";
-	//N8
+	//N3 Data di inizio ultimo corso
+	String SELECT_CORSO_RECENTE = "Select MAX(dataInizioCorso) from corso";
+	//N4  Durata media dei corsi ( in giorni lavorativi )
 	String SELECT_AVG_CORSI = "SELECT  avg((dataFineCorso-dataInizioCorso) -2*FLOOR((dataFineCorso-dataInizioCorso)/7)-DECODE(SIGN(TO_CHAR(dataFineCorso,'D')- TO_CHAR(dataInizioCorso,'D')),-1,2,0)+DECODE(TO_CHAR(dataInizioCorso,'D'),7,1,0)- DECODE(TO_CHAR(dataFineCorso,'D'),7,1,0)) as media FROM corso";
-}
+	//N5 Numero di commenti presenti
+	String SELECT_NUM_COMMENTI = "SELECT count(commentiCorso) from corsocorsista";
+	//N6 -> SELECT_CORSISTA Elenco corsisti
+	//N7 Docente che può tenere più tipologie di corso
+	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc fetch first 1 row only";
+	//N8 Corsi con posti disponibili
+	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) <= 12";
+	}
