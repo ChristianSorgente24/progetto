@@ -31,7 +31,7 @@ public interface DAOConstants {
 	
 	//statistiche
 	String SELECT_CORSO_RECENTE = "Select MAX(dataInizioCorso) from corso";
-	String SELECT_CORSO_PIU_FREQUENTATO = "Select corsista.nomeCorsista from corsista natural join corsocorsista where corsocorsista.codCorso = ?";
+	String SELECT_CORSO_PIU_FREQUENTATO = "Select codCorso from corsocorsista group by codCorso order by count(*) desc fetch first 1 row only";
 	
 	//QUERY PER STATISTICHE
 	//N2
