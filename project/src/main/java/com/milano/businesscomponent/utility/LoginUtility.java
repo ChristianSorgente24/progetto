@@ -16,8 +16,9 @@ public class LoginUtility implements DAOConstants {
 	public LoginUtility() throws ClassNotFoundException, DAOException, IOException {
 		conn = DBAccess.getConnection();
 	}
-
-	public Long getCodice(String username) throws DAOException {
+	
+	// Valore di ritorno se la password non viene recuperata = -1
+	public long getCodice(String username) throws DAOException {
 		try {
 			PreparedStatement ps = conn.prepareStatement(SELECT_ADMINPASS);
 			ps.setString(1, username);
@@ -25,7 +26,7 @@ public class LoginUtility implements DAOConstants {
 			if (rs.next()) {
 				return rs.getLong(1);
 			}
-			return null;
+			return -1;
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
