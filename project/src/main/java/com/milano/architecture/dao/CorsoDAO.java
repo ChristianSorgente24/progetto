@@ -8,7 +8,7 @@ import javax.sql.rowset.RowSetProvider;
 
 import com.milano.businesscomponent.model.Corso;
 
-public class CorsoDAO implements GenericDAO<Corso>,DAOConstants {
+public class CorsoDAO implements GenericDAO<Corso>, DAOConstants {
 
 	public static CorsoDAO getInstance() throws DAOException {
 		return new CorsoDAO();
@@ -27,10 +27,10 @@ public class CorsoDAO implements GenericDAO<Corso>,DAOConstants {
 	@Override
 	public void create(Connection conn, Corso entity) throws DAOException {
 		try {
-			rowSet.setCommand("select * from corso");
+			rowSet.setCommand(SELECT_CORSO);
 			rowSet.execute(conn);
 			rowSet.moveToInsertRow();
-		
+
 			rowSet.updateLong(1, entity.getCodCorso());
 			rowSet.updateString(2, entity.getNomeCorso());
 			rowSet.updateDate(3, new java.sql.Date(entity.getDataInizioCorso().getTime()));
@@ -39,9 +39,27 @@ public class CorsoDAO implements GenericDAO<Corso>,DAOConstants {
 			rowSet.updateString(6, entity.getCommentiCorso());
 			rowSet.updateString(7, entity.getAulaCorso());
 			rowSet.updateLong(8, entity.getCodDocente());
-			
+
+			rowSet.insertRow();
 			rowSet.moveToCurrentRow();
 			rowSet.acceptChanges();
+
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+	}
+
+	@Override
+	public void update(Connection conn, Corso entity) throws DAOException {
+
+	}
+
+	@Override
+	public void delete(Connection conn, Corso entity) throws DAOException {
+		try {
+			rowSet.setCommand(DELETE_CORSO);
+			rowSet.setLong(1, entity.getCodCorso());
+			rowSet.execute(conn); 
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
@@ -49,34 +67,22 @@ public class CorsoDAO implements GenericDAO<Corso>,DAOConstants {
 	}
 
 	@Override
-	public void update(Connection conn, Corso entity) throws DAOException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void delete(Connection conn, Corso entity) throws DAOException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public Corso getByCod(Connection conn, long id) throws DAOException {
-		
+
 		Corso corso = null;
 		try {
 			rowSet.setCommand(null);
 			rowSet.setLong(1, id);
 			rowSet.execute();
-			
-			if(rowSet != null) {
+
+			if (rowSet != null) {
 				corso.setCodCorso(rowSet.getInt(1));
 			}
-			
+
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
 		}
-		
+
 		return corso;
 	}
 

@@ -18,6 +18,9 @@ class CorsoDAOTest {
 			Corso corso = new Corso(1, "corso1", new Date(), new Date(), 100.00, "Bello", "1A", 1567L);
 			CorsoDAO.getInstance().create(DBAccess.getConnection(), corso);
 			System.out.println("Corso Creato");
+			
+			CorsoDAO.getInstance().delete(DBAccess.getConnection(), corso);
+			System.out.println("Corso Eliminato");
 		}catch (Exception e) {
 			fail(e.getMessage());
 		}
