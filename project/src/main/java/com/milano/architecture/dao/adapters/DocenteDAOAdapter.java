@@ -1,7 +1,9 @@
-package com.milano.architecture.dao;
+package com.milano.architecture.dao.adapters;
 
 import java.sql.Connection;
 
+import com.milano.architecture.dao.DAOException;
+import com.milano.architecture.dao.GenericDAO;
 import com.milano.businesscomponent.model.Docente;
 
 public class DocenteDAOAdapter implements GenericDAO<Docente>{
