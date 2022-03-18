@@ -66,7 +66,6 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants {
 		} 
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public Corso getByCod(Connection conn, long id) throws DAOException {
 
