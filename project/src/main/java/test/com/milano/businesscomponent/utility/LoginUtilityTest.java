@@ -1,4 +1,4 @@
-package com.milano.businesscomponent.utility;
+package test.com.milano.businesscomponent.utility;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
 import com.milano.architecture.dao.DAOException;
+import com.milano.businesscomponent.utility.LoginUtility;
 
 class LoginUtilityTest {
 
