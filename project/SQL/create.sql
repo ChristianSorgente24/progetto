@@ -20,8 +20,6 @@ nomeCorso varchar2(30) not null,
 dataInizioCorso date not null,
 dataFineCorso date not null,
 costoCorso number(7,2) not null,
-commentiCorso varchar2(100) not null,
---url a file
 aulaCorso varchar2(30) not null,
 codDocente int,
 constraint p_codCorso primary key(codCorso),
@@ -38,6 +36,7 @@ constraint codCorsista primary key(codCorsista));
 create table corsocorsista(
 codCorso int,
 codCorsista int,
+commentiCorso varchar2(100),
 constraint p_corsocorsista primary key(codCorso,codCorsista),
 constraint f_codCorso foreign key(codCorso) references corso(codCorso),
 constraint f_codCorsista foreign key(codCorsista) references corsista(codCorsista));
