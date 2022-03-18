@@ -1,6 +1,8 @@
 package com.milano.architecture.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.sql.rowset.CachedRowSet;
@@ -51,7 +53,24 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants {
 
 	@Override
 	public void update(Connection conn, Corso entity) throws DAOException {
+		try {
+			PreparedStatement stmt = conn.prepareStatement(UPDATE_CORSO);
+			stmt.setString(1, entity.getNomeCorso());
+			stmt.setDate(2, new java.sql.Date(entity.getDataInizioCorso().getTime()));
+			stmt.setDate(3, new java.sql.Date(entity.getDataFineCorso().getTime()));
+			stmt.setDouble(4, entity.getCostoCorso());
+			stmt.setString(5, entity.getCommentiCorso());
+			stmt.setString(6, entity.getAulaCorso());
+			stmt.setLong(7, entity.getCodDocente());
 
+			stmt.setLong(8, entity.getCodCorso());
+
+			stmt.execute();
+			conn.commit();
+
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
 	}
 
 	@Override
@@ -59,11 +78,11 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants {
 		try {
 			rowSet.setCommand(DELETE_CORSO);
 			rowSet.setLong(1, entity.getCodCorso());
-			rowSet.execute(conn); 
+			rowSet.execute(conn);
 
 		} catch (SQLException sql) {
 			throw new DAOException(sql);
-		} 
+		}
 	}
 
 	@Override
@@ -71,12 +90,20 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants {
 
 		Corso corso = null;
 		try {
-			rowSet.setCommand(null);
-			rowSet.setLong(1, id);
-			rowSet.execute();
+			PreparedStatement stmt = conn.prepareStatement(SELECT_CORSO_BYCOD);
+			stmt.setLong(1, id);
+			ResultSet rs = stmt.executeQuery();
 
-			if (rowSet != null) {
-				corso.setCodCorso(rowSet.getInt(1));
+			if (rs.next()) {
+				corso = new Corso();
+				corso.setCodCorso(rs.getLong(1));
+				corso.setNomeCorso(rs.getString(2));
+				corso.setDataInizioCorso(rs.getDate(3));
+				corso.setDataFineCorso(rs.getDate(4));
+				corso.setCostoCorso(rs.getDouble(5));
+				corso.setCommentiCorso(rs.getString(6));
+				corso.setAulaCorso(rs.getString(7));
+				corso.setCodDocente(rs.getLong(8));
 			}
 
 		} catch (SQLException sql) {
@@ -88,8 +115,37 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants {
 
 	@Override
 	public Corso[] getAll(Connection conn) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		Corso[] corsi = null;
+		try {
+			PreparedStatement stmt = conn.prepareStatement(SELECT_CORSO, ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_READ_ONLY);
+			ResultSet rs = stmt.executeQuery();
+
+			rs.last();
+			corsi = new Corso[rs.getRow()];
+			rs.beforeFirst();
+
+			for (int i = 0; i < corsi.length; i++) {
+
+				rs.next();
+				Corso corso = new Corso();
+				corso.setCodCorso(rs.getLong(1));
+				corso.setNomeCorso(rs.getString(2));
+				corso.setDataInizioCorso(rs.getDate(3));
+				corso.setDataFineCorso(rs.getDate(4));
+				corso.setCostoCorso(rs.getDouble(5));
+				corso.setCommentiCorso(rs.getString(6));
+				corso.setAulaCorso(rs.getString(7));
+				corso.setCodDocente(rs.getLong(8));
+
+				corsi[i] = corso;
+			}
+
+		} catch (SQLException sql) {
+			throw new DAOException(sql);
+		}
+
+		return corsi;
 	}
 
 }
