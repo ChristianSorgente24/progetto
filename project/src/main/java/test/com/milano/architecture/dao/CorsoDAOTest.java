@@ -15,7 +15,7 @@ class CorsoDAOTest {
 	@Test
 	void test() {
 		try {
-			Corso corso = new Corso(1, "corso1", new Date(), new Date(), 100.00, "Bello", "1A", 1567L);
+			Corso corso = new Corso(1, "corso1", new Date(), new Date(), 100.00, "1A", 1567L);
 			CorsoDAO.getFactory().create(DBAccess.getConnection(), corso);
 			System.out.println("\nCorso Creato");
 

@@ -3,9 +3,15 @@ package com.milano.businesscomponent.model;
 public class CorsoCorsista {
 		private long codCorso;
 		private long codCorsista;
+		private String commentiCorso;
 		
 		
-		
+		public String getCommentiCorso() {
+			return commentiCorso;
+		}
+		public void setCommentiCorso(String commentiCorso) {
+			this.commentiCorso = commentiCorso;
+		}
 		public long getCodCorsista() {
 			return codCorsista;
 		}

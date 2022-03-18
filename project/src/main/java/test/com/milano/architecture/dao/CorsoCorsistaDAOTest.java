@@ -36,7 +36,6 @@ class CorsoCorsistaDAOTest {
 		corso.setAulaCorso("B1");
 		corso.setCodCorso(1494);
 		corso.setCodDocente(1323L);
-		corso.setCommentiCorso("commento");
 		corso.setCostoCorso(500.00);
 		corso.setDataFineCorso(new Date());
 		corso.setDataInizioCorso(new Date());

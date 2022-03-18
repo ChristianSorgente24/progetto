@@ -36,6 +36,7 @@ public class CorsoCorsistaDAO extends CorsoCorsistaDAOAdapter implements DAOCons
 			
 			rowSet.updateLong(1, entity.getCodCorso());
 			rowSet.updateLong(2, entity.getCodCorsista());
+			rowSet.updateString(3, entity.getCommentiCorso());
 			
 			rowSet.insertRow();
 			rowSet.moveToCurrentRow();
@@ -56,6 +57,7 @@ public class CorsoCorsistaDAO extends CorsoCorsistaDAOAdapter implements DAOCons
 			ps = conn.prepareStatement(DELETE_CORSOCORSISTA);
 			ps.setObject(1, entity.getCodCorso());
 			ps.setObject(2, entity.getCodCorsista());
+			ps.setObject(3, entity.getCommentiCorso());
 			ps.execute();
 			conn.commit();
 		}catch (SQLException sqle) {

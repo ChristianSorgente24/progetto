@@ -16,7 +16,7 @@ class CorsoBCTest {
 			GregorianCalendar inizio = new GregorianCalendar(2002, 1, 15, 0, 0, 0);
 			GregorianCalendar fine = new GregorianCalendar(2002, 1, 21, 0, 0, 0);
 
-			Corso corso = new Corso(1, "corso1", inizio.getTime(), fine.getTime(), 100.00, "Bello", "1A", 1567L);
+			Corso corso = new Corso(1, "corso1", inizio.getTime(), fine.getTime(), 100.00, "1A", 1567L);
 			CorsoBC cBC = new CorsoBC();
 
 			cBC.createCorso(corso);

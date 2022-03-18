@@ -11,19 +11,17 @@ public class Corso implements DAOConstants {
 	private Date dataInizioCorso;
 	private Date dataFineCorso;
 	private Double costoCorso;
-	private String commentiCorso;
 	private String aulaCorso;
 	private Long codDocente;
 
 	public Corso(long codCorso, String nomeCorso, Date dataInizioCorso, Date dataFineCorso, Double costoCorso,
-			String commentiCorso, String aulaCorso, Long codDocente) {
+			String aulaCorso, Long codDocente) {
 		super();
 		this.codCorso = codCorso;
 		this.nomeCorso = nomeCorso;
 		this.dataInizioCorso = dataInizioCorso;
 		this.dataFineCorso = dataFineCorso;
 		this.costoCorso = costoCorso;
-		this.commentiCorso = commentiCorso;
 		this.aulaCorso = aulaCorso;
 		this.codDocente = codDocente;
 	}
@@ -72,13 +70,6 @@ public class Corso implements DAOConstants {
 		this.costoCorso = costoCorso;
 	}
 
-	public String getCommentiCorso() {
-		return commentiCorso;
-	}
-
-	public void setCommentiCorso(String commentiCorso) {
-		this.commentiCorso = commentiCorso;
-	}
 
 	public String getAulaCorso() {
 		return aulaCorso;
@@ -99,8 +90,7 @@ public class Corso implements DAOConstants {
 	@Override
 	public String toString() {
 		return "Corso [codCorso=" + codCorso + ", nomeCorso=" + nomeCorso + ", dataInizioCorso=" + dataInizioCorso
-				+ ", dataFineCorso=" + dataFineCorso + ", costoCorso=" + costoCorso + ", commentiCorso=" + commentiCorso
-				+ ", aulaCorso=" + aulaCorso + ", codDocente=" + codDocente + "]";
+				+ ", dataFineCorso=" + dataFineCorso + ", costoCorso=" + costoCorso + ", commentiCorso=" + ", aulaCorso=" + aulaCorso + ", codDocente=" + codDocente + "]";
 	}
 
 }
