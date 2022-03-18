@@ -17,13 +17,12 @@ public interface DAOConstants {
 	
 	//CRUD corsocorsista
 	String SELECT_CORSOCORSISTA = "Select * from corsocorsista";
-	String UPDATE_CORSOCORSISTA = "Update corsocorsista set codCorso = ? AND codCorsista = ?";
 	String DELETE_CORSOCORSISTA = "Delete from corsocorsista where codCorso = ? AND codCorsista = ?";
 	String SELECT_CORSOCORSISTA_BYCOD = "select * from corsocorsista where codCorso = ? AND codCorsista = ?";
 	
 	//CRUD corso
 	String SELECT_CORSO = "select * from corso";
-	String UPDATE_CORSO = "update corso set nomeCorso = ?, dataInizioCorso = ?, dataFineCorso = ?, costoCorso = ?, commentiCorso = ?, aulaCorso = ?, codDocente = ? where codCorso = ?";
+	String UPDATE_CORSO = "update corso set nomeCorso = ?, dataInizioCorso = ?, dataFineCorso = ?, costoCorso = ?, aulaCorso = ?, codDocente = ? where codCorso = ?";
 	String DELETE_CORSO = "delete from corso where codCorso = ?";
 	String SELECT_CORSO_BYCOD = "select * from corso where codCorso = ?";
 
@@ -31,7 +30,8 @@ public interface DAOConstants {
 	String SELECT_ADMINPASS = "Select codAdmin from amministratore where username = ?";
 	
 	//statistiche
-	String SELECT_CORSO_RECENTE = "Select MIN(dataInizioCorso) from corso";
+	String SELECT_CORSO_RECENTE = "Select MAX(dataInizioCorso) from corso";
+	String SELECT_CORSO_PIU_FREQUENTATO = "Select corsista.nomeCorsista from corsista natural join corsocorsista where corsocorsista.codCorso = ?";
 	
 	//QUERY PER STATISTICHE
 	//N2
