@@ -26,10 +26,6 @@ class CorsistaDAOTest {
 	static void setUpBeforeClass() throws Exception {
 		conn = DBAccess.getConnection();
 		corsista = new Corsista();
-		corsista.setNomeCorsista("Paolo");
-		corsista.setCognomeCorsista("Rossi");
-		corsista.setCodCorsista(1);
-		corsista.setPrecedentiFormativi((byte)1);
 	}
 
 	@AfterAll
@@ -48,6 +44,10 @@ class CorsistaDAOTest {
 	@Order(1)
 	void testCreate() {
 		try {
+			corsista.setNomeCorsista("Paolo");
+			corsista.setCognomeCorsista("Rossi");
+			corsista.setCodCorsista(1);
+			corsista.setPrecedentiFormativi((byte)1);
 			CorsistaDAO.getFactory().create(conn, corsista);
 			System.out.println("Creato corsista");
 		}catch(DAOException exc) {
@@ -65,9 +65,9 @@ class CorsistaDAOTest {
 			corsista.setCodCorsista(1);
 			corsista.setPrecedentiFormativi((byte)0);
 			CorsistaDAO.getFactory().update(conn, corsista);
-			System.out.println("Modificato articolo");
+			System.out.println("Modificato corsista");
 			Corsista corsis = CorsistaDAO.getFactory().getByCod(conn, 1);
-			corsis.toString();			
+			System.out.println(corsis.toString());			
 		}catch(DAOException exc) {
 			exc.printStackTrace();
 			fail(exc.getMessage());

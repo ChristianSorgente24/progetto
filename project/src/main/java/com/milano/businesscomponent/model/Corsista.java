@@ -50,7 +50,7 @@ public class Corsista {
 
 	@Override
 	public String toString() {
-		return "Corsista [nomeCorsista=" + nomeCorsista + ", cognomeCorsista=" + cognomeCorsista + ", codCorsista="
+		return "Nome Corsista=" + nomeCorsista + ", cognome Corsista=" + cognomeCorsista + ", codCorsista="
 				+ codCorsista + ", precedentiFormativi=" + precedentiFormativi + "]";
 	}
 }
