@@ -32,6 +32,7 @@ public class StatsUtility implements DAOConstants{
 		int contCorso = 0;
 		if (rs.next()) 
 			contCorso = rs.getInt(1);
+		//prova
 		return contCorso;
 	} catch (SQLException sql) {
 		throw new DAOException(sql);

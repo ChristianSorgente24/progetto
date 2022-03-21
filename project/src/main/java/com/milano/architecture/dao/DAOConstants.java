@@ -46,4 +46,6 @@ public interface DAOConstants {
 	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc";
 	//N8 Corsi con posti disponibili
 	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) < 12";
-	}
+	
+//prova
+}

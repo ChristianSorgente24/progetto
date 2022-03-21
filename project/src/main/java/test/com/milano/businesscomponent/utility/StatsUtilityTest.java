@@ -127,6 +127,7 @@ class StatsUtilityTest {
 			StatsUtility st = new StatsUtility();
 			int n = st.numeroCorsiTotali();
 				System.out.println("totali corsi: "+n);
+				System.out.println("   ");
 			
 		} catch(Exception exc) {
 			exc.printStackTrace();
