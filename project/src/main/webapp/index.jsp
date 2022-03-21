@@ -11,6 +11,7 @@
 	<jsp:include page="nav.jsp"/>
 	<jsp:include page="sidebar.jsp"/>
 	<h1>Prova commit 2</h1>
+	<jsp:include page="footer.html"/>
 </body>
 	
 </html>
