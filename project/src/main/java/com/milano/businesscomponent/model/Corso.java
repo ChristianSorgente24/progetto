@@ -87,6 +87,11 @@ public class Corso implements DAOConstants {
 		this.codDocente = codDocente;
 	}
 
+	public boolean isTerminato() {
+		Date oggi = new Date();
+		return dataFineCorso.after(oggi);
+	}
+	
 	@Override
 	public String toString() {
 		return "Corso [codCorso=" + codCorso + ", nomeCorso=" + nomeCorso + ", dataInizioCorso=" + dataInizioCorso
