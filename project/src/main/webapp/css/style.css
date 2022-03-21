@@ -8,6 +8,10 @@ footer {
   padding-right: 15px;
 }
 
+#side-toggle {
+  	visibility: hidden;
+}
+
 /* Sidebar */
 @media screen and (max-width: 768px) {
   .row-offcanvas {
@@ -15,7 +19,7 @@ footer {
     -webkit-transition: all 0.25s ease-out;
     -moz-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
-    background:#ecf0f1;
+    background: white;
   }
 
   .row-offcanvas-left
@@ -33,6 +37,13 @@ footer {
     width: 40%;
     margin-left: 12px;
   }
+  
+#side-toggle {
+  	visibility: visible;
+  	margin-top: 10px;
+  	height: 15px;
+  	width: 30px;
+}
 }
 
 #sidebar {
