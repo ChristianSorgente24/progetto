@@ -4,13 +4,17 @@
 <html>
 <head>
 <%@include file="CDN.html"%>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
 <meta charset="ISO-8859-1">
 <title>Index</title>
 </head>
-<body>
+<body>	
+	<div id="IMGsample">
+	<img src ="images/sample course.jpg" />
+	</div>
+	
 	<jsp:include page="nav.jsp"/>
-	<jsp:include page="sidebar.jsp"/>
-	<h1>Prova commit 2</h1>
 	<jsp:include page="footer.html"/>
 </body>
 	
