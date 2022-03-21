@@ -20,39 +20,45 @@ if (username != null) {
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-	<jsp:include page="sidebar.jsp"/>
-			<div class="page header">
-				<h3>Docenti</h3>
+	<div class="container-fluid">
+	    <div class="row row-offcanvas row-offcanvas-left">
+			<jsp:include page="sidebar.jsp"/>
+				<div class="col-xs-12 col-sm-9">
+					<jsp:include page="side-toggle.html"/>
+					<div class="page header">
+						<h3>Docenti</h3>
+					</div>
+					<div class="table responsive">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>Cognome</th>
+									<th>Link Al Cv</th>
+									<th>Id Docente</th>
+								</tr>
+							</thead>
+							<tbody>
+								<%
+								Docente[] d = AdminFacade.getInstance().getAllDocente();
+								for (int i = 0; i < d.length; i++) {
+								%>
+								<tr>
+									<td><%=d[i].getNomeDocente()%></td>
+									<td><%=d[i].getCognomeDocente()%></td>
+									<td><%=d[i].getCvDocente()%></td>
+									<td><%=d[i].getCodDocente()%></td>
+								</tr>
+								<%
+								}
+								%>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
-			<div class="table responsive">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Nome</th>
-							<th>Cognome</th>
-							<th>Link Al Cv</th>
-							<th>Id Docente</th>
-						</tr>
-					</thead>
-					<tbody>
-						<%
-						Docente[] d = AdminFacade.getInstance().getAllDocente();
-						for (int i = 0; i < d.length; i++) {
-						%>
-						<tr>
-							<td><%=d[i].getNomeDocente()%></td>
-							<td><%=d[i].getCognomeDocente()%></td>
-							<td><%=d[i].getCvDocente()%></td>
-							<td><%=d[i].getCodDocente()%></td>
-						</tr>
-						<%
-						}
-						%>
-					</tbody>
-				</table>
-			</div>
-		</div>
 <jsp:include page="footer.html"/>
+</div>
 </body>
 </html>
 <%

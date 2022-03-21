@@ -8,10 +8,3 @@
          </ul>
      </div>
 </div>
-<div class="col-xs-12 col-sm-9">
-	<button type="button" data-toggle="offcanvas" id="side-toggle">
-         <span class="navbar-toggler-icon"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-   	</button>
- <!--/span-->
