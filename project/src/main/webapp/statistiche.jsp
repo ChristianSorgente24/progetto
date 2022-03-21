@@ -1,8 +1,4 @@
-<% 
 
-	String username = (String) session.getAttribute("username");
-	if(username != null) {
-%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.milano.businesscomponent.model.Docente"%>
 <%@page import="java.util.LinkedList"%>
@@ -66,8 +62,6 @@
 	      
 	       <tr>
 	        <td>Docente con pi&ugrave; corsi: </td>
-	        <td>
-	        <% if (docenteMax.size()>1) { %>
 	        <td>	 	
 	        	<table class="table table-striped">
 	        		<thead>
@@ -85,7 +79,7 @@
 	        		 	 %>
 	        		 		<td><%= docenteMax.get(i).getNomeDocente() %></td>
 	        		 		<td><%= docenteMax.get(i).getCognomeDocente() %></td>
-	        		 		<td><%= docenteMax.get(i).getCvDocente() %></td>
+	        		 		<td><a href="#"><%= docenteMax.get(i).getCvDocente() %></a></td>
 	        		 		<td><%= docenteMax.get(i).getCodDocente() %></td>
 	        		 	<%
 	        		 	 	}
@@ -94,13 +88,7 @@
 	        		 </tbody>
 	        	</table>
 	        </td>
-	       	 <% } else { %>
-	       	 	<td><%= docenteMax.get(0).getNomeDocente() %></td>	
-	        	<td><%= docenteMax.get(0).getCognomeDocente() %></td>
-	        	<td><%= docenteMax.get(0).getCvDocente() %></td>
-	        	<td><%= docenteMax.get(0).getCodDocente() %></td>
-	        <% } %>
-	        </td>
+	        
 	      </tr>
 	      
 	    </tbody>
@@ -108,11 +96,6 @@
 
 
 </div>
-
+<jsp:include page="footer.html"/>
 </body>
 </html>
-<%
-	}else {
-		response.sendRedirect("accessoNegato.jsp");
-	}
-%>
