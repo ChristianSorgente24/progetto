@@ -87,7 +87,7 @@
 											<td><%=docenteMax.get(i).getNomeDocente()%></td>
 											<td><%=docenteMax.get(i).getCognomeDocente()%></td>
 											<td><a href="#"><%=docenteMax.get(i).getCvDocente()%></a></td>
-											<td><%=docenteMax.get(i).getCodDocente()%></td>
+											<td><%=docenteMax.get(i).getCodDocente()%></td><br>
 											<%
 											}
 											%>

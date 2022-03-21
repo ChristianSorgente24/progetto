@@ -19,7 +19,7 @@ public class InserisciCorso extends HttpServlet {
 
 	private static final long serialVersionUID = -8861402462745469066L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		Corso corso = new Corso();
