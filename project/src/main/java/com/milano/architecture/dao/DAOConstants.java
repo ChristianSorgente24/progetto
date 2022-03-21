@@ -10,7 +10,7 @@ public interface DAOConstants {
 	String UPDATE_CORSISTA = "Update corsista set nomeCorsista = ?, cognomeCorsista = ?, precedentiFormativi = ? where codCorsista = ?";
 	String DELETE_CORSISTA = "Delete from corsista where codCorsista = ?";
 	String SELECT_CORSISTA_BYCOD = "select * from corsista where codCorsista = ?";
-	String SELECT_CORSISTI_BYCODCORSO = "select codcorsista from corsocorsista where  codCorso = ?  ";
+	String SELECT_CORSISTI_BYCODCORSO = "select corsista.nomecorsista, CORSISTA.COGNOMECORSISTA, CORSISTA.CODCORSISTA, CORSISTA.PRECEDENTIFORMATIVI from corsista inner join corsocorsista on corsista.codcorsista = corsocorsista.codcorsista where codcorso= ?";
 	
 	//CRUD docente
 	String SELECT_DOCENTE = "Select * from docente";
@@ -22,6 +22,7 @@ public interface DAOConstants {
 	String SELECT_CORSOCORSISTA_BYCOD = "select * from corsocorsista where codCorso = ? AND codCorsista = ?";
 	
 	//getcorsistibycodcorso
+	
 	//CRUD corso
 	String SELECT_CORSO = "select * from corso";
 	String UPDATE_CORSO = "update corso set nomeCorso = ?, dataInizioCorso = ?, dataFineCorso = ?, costoCorso = ?, aulaCorso = ?, codDocente = ? where codCorso = ?";
@@ -47,7 +48,7 @@ public interface DAOConstants {
 	//N7 Docente che può tenere più tipologie di corso
 	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc";
 	//N8 Corsi con posti disponibili
-	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) < 12";
+	String SELECT_CORSI_DISPONIBILI = "select corso.codCorso from corso left join corsocorsista on CORSOCORSISTA.codCorso = CORSO.codCorso group by corso.codCorso having count(*) < 12";
 	
 //prova
 }

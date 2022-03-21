@@ -1,5 +1,7 @@
 package com.milano.businesscomponent.model;
 
+import java.util.Objects;
+
 public class Corsista {
 	private String nomeCorsista;
 	private String cognomeCorsista;
@@ -53,4 +55,24 @@ public class Corsista {
 		return "Nome Corsista=" + nomeCorsista + ", cognome Corsista=" + cognomeCorsista + ", codCorsista="
 				+ codCorsista + ", precedentiFormativi=" + precedentiFormativi + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(codCorsista, cognomeCorsista, nomeCorsista, precedentiFormativi);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Corsista other = (Corsista) obj;
+		return codCorsista == other.codCorsista && Objects.equals(cognomeCorsista, other.cognomeCorsista)
+				&& Objects.equals(nomeCorsista, other.nomeCorsista) && precedentiFormativi == other.precedentiFormativi;
+	}
+	
+	
 }

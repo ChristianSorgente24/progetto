@@ -18,8 +18,8 @@ public class RimuoviCorsoCorsista extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CorsoCorsista corsoC = new CorsoCorsista();
-		corsoC.setCodCorsista(Long.parseLong(request.getParameter("codCorsista")));
-		corsoC.setCodCorso(Long.parseLong(request.getParameter("codCorso")));
+		corsoC.setCodCorsista(Long.parseLong(request.getParameter("corsista")));
+		corsoC.setCodCorso(Long.parseLong(request.getParameter("corso")));
 		CorsoCorsistaBC corsoCorsistaBC;
 		try {
 			corsoCorsistaBC = new CorsoCorsistaBC();

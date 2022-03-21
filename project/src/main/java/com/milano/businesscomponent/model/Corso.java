@@ -1,6 +1,7 @@
 package com.milano.businesscomponent.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 import com.milano.architecture.dao.DAOConstants;
 
@@ -89,7 +90,7 @@ public class Corso implements DAOConstants {
 
 	public boolean isTerminato() {
 		Date oggi = new Date();
-		return dataFineCorso.after(oggi);
+		return dataFineCorso.before(oggi);
 	}
 	
 	@Override
@@ -98,4 +99,26 @@ public class Corso implements DAOConstants {
 				+ ", dataFineCorso=" + dataFineCorso + ", costoCorso=" + costoCorso + ", commentiCorso=" + ", aulaCorso=" + aulaCorso + ", codDocente=" + codDocente + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(aulaCorso, codCorso, codDocente, costoCorso, dataFineCorso, dataInizioCorso, nomeCorso);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Corso other = (Corso) obj;
+		return Objects.equals(aulaCorso, other.aulaCorso) && codCorso == other.codCorso
+				&& codDocente == other.codDocente && Objects.equals(costoCorso, other.costoCorso)
+				&& Objects.equals(dataFineCorso, other.dataFineCorso)
+				&& Objects.equals(dataInizioCorso, other.dataInizioCorso) && Objects.equals(nomeCorso, other.nomeCorso);
+	}
+	
+	
+	
 }

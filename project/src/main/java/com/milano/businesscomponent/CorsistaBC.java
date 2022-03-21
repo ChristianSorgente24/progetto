@@ -62,4 +62,15 @@ public class CorsistaBC {
 			throw new DAOException(sql);
 		}
 	}
+	
+	public static Corsista[] getAllByCodCorso(Long codCorso) 
+			throws DAOException {
+		try {
+			return CorsistaDAO.getFactory().getAllByCodCorso(conn, codCorso);
+		}catch(SQLException sql) {
+			throw new DAOException(sql);
+		}
+	}
+	
+	
 }

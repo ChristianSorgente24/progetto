@@ -71,6 +71,11 @@ private static AdminFacade cF;
 		return dBC.getAll();
 	}
 	
+	public Corsista[] getAllCorsistiByCodCorso(long codCorso) throws ClassNotFoundException, DAOException, IOException{
+		CorsistaBC cBC = new CorsistaBC();
+		return cBC.getAllByCodCorso(codCorso);
+	}
+	
 //--------------------------------------------------------DELETE---------------------------------------------
 	
 	

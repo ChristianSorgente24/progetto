@@ -18,8 +18,8 @@ public class InserisciCorsoCorsista extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		CorsoCorsista cs = new CorsoCorsista();
-		cs.setCodCorso(Long.parseLong(request.getParameter("corsi")));
-		cs.setCodCorsista(Long.parseLong(request.getParameter("corsisti")));
+		cs.setCodCorso(Long.parseLong(request.getParameter("corso")));
+		cs.setCodCorsista(Long.parseLong(request.getParameter("corsista")));
 		
 		
 		try {
