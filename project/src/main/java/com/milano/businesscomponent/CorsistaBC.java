@@ -11,7 +11,7 @@ import com.milano.businesscomponent.idgenerator.CodGeneratorCorsista;
 import com.milano.businesscomponent.model.Corsista;
 
 public class CorsistaBC {
-	private Connection conn;
+	private static Connection conn;
 	
 	public CorsistaBC() throws ClassNotFoundException, DAOException, IOException {
 		conn = DBAccess.getConnection();
@@ -36,7 +36,7 @@ public class CorsistaBC {
 		}
 	}
 	
-	public void deleteCorsista(Corsista corsista) 
+	public static void deleteCorsista(Corsista corsista) 
 			throws DAOException {
 		try {
 			CorsistaDAO.getFactory().delete(conn, corsista);
@@ -54,7 +54,7 @@ public class CorsistaBC {
 		}
 	}
 	
-	public Corsista getByCodCorsista(Long codCorsista) 
+	public static Corsista getByCodCorsista(Long codCorsista) 
 			throws DAOException {
 		try {
 			return CorsistaDAO.getFactory().getByCod(conn, codCorsista);

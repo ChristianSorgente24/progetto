@@ -13,7 +13,7 @@ import com.milano.businesscomponent.model.Corso;
 
 public class CorsoBC {
 
-	private Connection conn;
+	private static Connection conn;
 
 	private boolean validazioneDate(Corso corso) {
 
@@ -53,7 +53,7 @@ public class CorsoBC {
 		}
 	}
 
-	public void deleteCorso(Corso corso) throws DAOException {
+	public static void deleteCorso(Corso corso) throws DAOException {
 		try {
 			CorsoDAO.getFactory().delete(conn, corso);
 		} catch (SQLException sql) {
@@ -62,7 +62,7 @@ public class CorsoBC {
 
 	}
 
-	public Corso getByCodCorso(long codCorso) throws DAOException {
+	public static Corso getByCodCorso(long codCorso) throws DAOException {
 
 		try {
 			return CorsoDAO.getFactory().getByCod(conn, codCorso);
