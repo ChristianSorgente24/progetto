@@ -66,6 +66,11 @@ private static AdminFacade cF;
 		return cBC.getAll();
 	}
 	
+	public Docente[] getAllDocente() 
+			throws DAOException, ClassNotFoundException, IOException {
+		DocenteBC dBC = new DocenteBC();
+		return dBC.getAll();
+	}
 	
 //--------------------------------------------------------DELETE---------------------------------------------
 	
