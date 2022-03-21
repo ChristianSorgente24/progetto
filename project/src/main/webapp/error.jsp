@@ -2,6 +2,25 @@
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isErrorPage="true"%>
+<%
+String titolo = null;
+String descrizione = null;
+
+if (exception instanceof ClassNotFoundException) {
+	titolo = "Driver not found";
+	descrizione = exception.getMessage();
+} else if (exception instanceof DAOException) {
+	titolo = "DAOException";
+	descrizione = exception.getMessage();
+} else if (exception instanceof NullPointerException) {
+	titolo = "Record not found";
+	descrizione = exception.getMessage();
+} else {
+	titolo = exception.getClass().getName();
+	descrizione = exception.getMessage();
+}
+%>
+
 <!DOCTYPE html>
 <html>
 
@@ -13,34 +32,20 @@
 </head>
 
 <body>
-	<jsp:include page="nav.jsp"/>
-	<%
-	if (exception instanceof ClassNotFoundException) {
-	%>
-	<h3>Driver non found</h3>
-	<p>
-		<%=exception.getMessage()%>
-	</p>
-	<%
-	} else if (exception instanceof DAOException) {
-	%>
-	<h3>DAOException</h3>
-	<p>
-		<%=exception.getMessage()%>
-	</p>
-	<%
-	} else {
-	%>
-
-	<h3><%=exception.getClass().getName()%></h3>
-	<p>
-		<%=exception.getMessage()%>
-		<%
-		exception.printStackTrace(new PrintWriter(out));
-		%>
-	</p>
-	<%
-	}
-	%>
+	<jsp:include page="nav.jsp" />
+	<div class="container">
+		<div class="jumbotron">
+			<h1><%=titolo%>
+				<span class="glyphicon glyphicon-remove-circle"
+					style="font-size: 35px"></span>
+			</h1>
+			<p><%=descrizione%></p>
+		</div>
+		<button type="submit" class="btn btn-primary"
+			onclick="location.href = 'index.jsp';">
+			<span class="glyphicon glyphicon-home" style="font-size: 15px"></span>&nbsp;Torna
+			alla Home
+		</button>
+	</div>
 </body>
 </html>
