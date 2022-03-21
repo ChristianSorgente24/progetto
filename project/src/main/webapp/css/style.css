@@ -50,3 +50,11 @@ footer {
     padding:15px;
     margin-top:10px;
 }
+
+.table {
+	width: auto;
+}
+
+#IMGsample img {
+   width: 100%;
+}
