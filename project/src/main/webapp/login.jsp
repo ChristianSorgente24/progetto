@@ -38,7 +38,7 @@ errorPage="error.jsp"%>
 						<span class="input-group-addon">
 							<i class="glyphicon glyphicon-lock"></i>
 						</span>
-						<input type="codadmin" name="codadmin" placeholder="Codadmin..." class="form-control">
+						<input type="text" name="codadmin" placeholder="Codadmin..." class="form-control">
 					</div>
 				</div>
 				<div class="col-md-7 control-label"></div>
