@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top navbar-default" role="navigation" style="background-color:#3c3d41;color:#FFFFFB3">
+<div class="navbar navbar-fixed-top navbar-default" role="navigation" style="background-color:#3c3d41;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -9,7 +9,7 @@
             <a class="navbar-brand" href="index.jsp">Project Betacom</a>
         </div>
         <div class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="font:#FFFFFB3">
             	<%
 					String admin = (String) session.getAttribute("username");
 					if(admin == null) {

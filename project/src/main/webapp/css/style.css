@@ -22,24 +22,24 @@ footer {
 
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -40%;
+    left: -25%;
   }
 
   .row-offcanvas-left.active {
-    left: 40%;
+    left: 25%;
   }
 
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 40%;
+    width: 25%;
     margin-left: 12px;
   }
   
 	#side-toggle {
 	  	visibility: visible;
 	  	margin-top: 10px;
-	  	height: 15px;
+	  	height: 28px;
 	  	width: 30px;
 	}
 }
