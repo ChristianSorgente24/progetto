@@ -1,4 +1,7 @@
-
+<%
+	String username = (String) session.getAttribute("username");
+	if (username != null) {
+%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.milano.businesscomponent.model.Docente"%>
 <%@page import="java.util.LinkedList"%>
@@ -105,3 +108,8 @@
 	<jsp:include page="footer.html" />
 </body>
 </html>
+<%
+	} else {
+	response.sendRedirect("accessonegato.jsp");
+	}
+%>
