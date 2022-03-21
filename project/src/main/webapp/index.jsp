@@ -9,6 +9,7 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp"/>
+	<jsp:include page="sidebar.jsp"/>
 	<h1>Prova commit 2</h1>
 </body>
 	
