@@ -51,6 +51,7 @@ errorPage="error.jsp"%>
 			</div>
 		</form>
 	</div>
-	<jsp:include page="footer.html"/>
+	
 </body>
+<footer><jsp:include page="footer.html"/></footer>
 </html>

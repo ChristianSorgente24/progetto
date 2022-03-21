@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  margin-bottom:320px;
 }
 footer {
   padding-left: 15px;
@@ -18,8 +19,9 @@ footer {
     -moz-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
     background: white;
+    
   }
-
+		
   .row-offcanvas-left
   .sidebar-offcanvas {
     left: -25%;
@@ -51,4 +53,8 @@ footer {
 
 #IMGsample img {
    width: 100%;
+}
+html {
+  position: relative;
+  min-height: 100%;
 }
