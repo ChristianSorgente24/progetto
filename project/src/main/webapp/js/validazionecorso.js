@@ -30,18 +30,7 @@ $(document).ready(function() {
 					}
 				}
 			},
-			commenti : {
-				container : '#infoCommenti',
-				validators : {
-					notEmpty : {
-						message : 'Il campo commenti non pu&ograve; essere vuoto'
-					}, 
-					regexp : {
-						regexp : /^[a-zA-Z ,.'-]+[0-9]{1,3}$/,
-						message : 'scrivi almeno 1 commento'
-					}
-				}
-			}, 
+			
 			codCorso : {
 				container : '#infoCodCorso',
 				validators : {

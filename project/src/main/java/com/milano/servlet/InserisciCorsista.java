@@ -36,7 +36,7 @@ public class InserisciCorsista extends HttpServlet {
 			e.printStackTrace();
 			throw new ServletException(e);
 		}
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("inserimentoriuscito.jsp");
 	}
 
 	}

@@ -106,20 +106,6 @@
 			<div class="col-md-7 control-label" id="infoCosto"></div>
 		</div>
 		
-		
-		<div class="form-group">
-			<label class="col-md-1 control-label">Commenti</label>
-			<div class="col-md-4 inputGroupContainer">
-				<div class="input-group">
-					<span class="input-group-addon">
-						<i class="glyphicon glyphicon-pencil"></i>
-					</span>
-					<textarea rows="3" cols="50" name="commenti" id= "commenti" placeholder="Commenti corso..." class="form-control" style="resize : none" ></textarea>
-				</div>
-			</div>
-			<div class="col-md-7 control-label" id="infoCommenti"></div>
-		</div>
-		
 		<div class="form-group">
 			<label class="col-md-1 control-label">Aula corso</label>
 			<div class="col-md-4 inputGroupContainer">

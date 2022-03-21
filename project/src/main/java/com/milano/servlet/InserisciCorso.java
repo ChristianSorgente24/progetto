@@ -24,17 +24,17 @@ public class InserisciCorso extends HttpServlet {
 
 		Corso corso = new Corso();
 		corso.setCodCorso(Long.parseLong(request.getParameter("codCorso")));
-		corso.setNomeCorso(request.getParameter("nomeCorso"));
+		corso.setNomeCorso(request.getParameter("nome"));
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		try {
-			corso.setDataInizioCorso(format.parse(request.getParameter("dataInizioCorso")));
-			corso.setDataFineCorso(format.parse(request.getParameter("dataFineCorso")));
+			corso.setDataInizioCorso(format.parse(request.getParameter("dataInizio")));
+			corso.setDataFineCorso(format.parse(request.getParameter("dataFine")));
 		} catch (ParseException exc) {
 			exc.printStackTrace();
 			throw new ServletException(exc);
 		}
-		corso.setCostoCorso(Double.parseDouble(request.getParameter("costoCorso")));
-		corso.setAulaCorso(request.getParameter("aulaCorso"));
+		corso.setCostoCorso(Double.parseDouble(request.getParameter("costo")));
+		corso.setAulaCorso(request.getParameter("aula"));
 		corso.setCodDocente(Long.parseLong(request.getParameter("codDocente")));
 		
 		try {

@@ -14,11 +14,13 @@
 		</div>
 		<div class="panel panel-danger">
 			<div class="panel-heading">
-				<h3>Il corsista è stato iscritto al corso</h3>
+				<h3>Operazione riuscita</h3>
 			</div>
 			<div class="panel-body">
 				<p>Per iscrivere altri corsisti:
 				<a href="inseriscicorsocorsista.jsp">cliccare qui</a></p>
+				<p>Per creare altri corsi:
+				<a href="inseriscicorsi.jsp">cliccare qui</a></p>
 			</div>
 		</div>
 	</div>	
