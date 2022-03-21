@@ -10,6 +10,7 @@ public interface DAOConstants {
 	String UPDATE_CORSISTA = "Update corsista set nomeCorsista = ?, cognomeCorsista = ?, precedentiFormativi = ? where codCorsista = ?";
 	String DELETE_CORSISTA = "Delete from corsista where codCorsista = ?";
 	String SELECT_CORSISTA_BYCOD = "select * from corsista where codCorsista = ?";
+	String SELECT_CORSISTI_BYCODCORSO = "select codcorsista from corsocorsista where  codCorso = ?  ";
 	
 	//CRUD docente
 	String SELECT_DOCENTE = "Select * from docente";
@@ -20,6 +21,7 @@ public interface DAOConstants {
 	String DELETE_CORSOCORSISTA = "Delete from corsocorsista where codCorso = ? AND codCorsista = ?";
 	String SELECT_CORSOCORSISTA_BYCOD = "select * from corsocorsista where codCorso = ? AND codCorsista = ?";
 	
+	//getcorsistibycodcorso
 	//CRUD corso
 	String SELECT_CORSO = "select * from corso";
 	String UPDATE_CORSO = "update corso set nomeCorso = ?, dataInizioCorso = ?, dataFineCorso = ?, costoCorso = ?, aulaCorso = ?, codDocente = ? where codCorso = ?";
