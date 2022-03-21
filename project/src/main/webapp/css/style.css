@@ -1,5 +1,3 @@
-@import url("https://bootswatch.com/flatly/bootstrap.min.css");
-
 body {
   padding-top: 50px;
 }
@@ -38,21 +36,17 @@ footer {
     margin-left: 12px;
   }
   
-#side-toggle {
-  	visibility: visible;
-  	margin-top: 10px;
-  	height: 15px;
-  	width: 30px;
-}
+	#side-toggle {
+	  	visibility: visible;
+	  	margin-top: 10px;
+	  	height: 15px;
+	  	width: 30px;
+	}
 }
 
 #sidebar {
     padding:15px;
     margin-top:10px;
-}
-
-.table {
-	width: auto;
 }
 
 #IMGsample img {

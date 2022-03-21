@@ -17,41 +17,40 @@ if (username != null) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="ISO-8859-1">
 <title>Docenti</title>
-
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-<jsp:include page="sidebar.jsp"/>
-	<jsp:include page="nav.jsp" />
-		<div class="page header">
-			<h3>Docenti</h3>
-		</div>
-		<div class="table responsive">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Nome</th>
-						<th>Cognome</th>
-						<th>Link Al Cv</th>
-						<th>Id Docente</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%
-					Docente[] d = AdminFacade.getInstance().getAllDocente();
-					for (int i = 0; i < d.length; i++) {
-					%>
-					<tr>
-						<td><%=d[i].getNomeDocente()%></td>
-						<td><%=d[i].getCognomeDocente()%></td>
-						<td><%=d[i].getCvDocente()%></td>
-						<td><%=d[i].getCodDocente()%></td>
-					</tr>
-					<%
-					}
-					%>
-				</tbody>
-			</table>
+	<jsp:include page="sidebar.jsp"/>
+			<div class="page header">
+				<h3>Docenti</h3>
+			</div>
+			<div class="table responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Cognome</th>
+							<th>Link Al Cv</th>
+							<th>Id Docente</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+						Docente[] d = AdminFacade.getInstance().getAllDocente();
+						for (int i = 0; i < d.length; i++) {
+						%>
+						<tr>
+							<td><%=d[i].getNomeDocente()%></td>
+							<td><%=d[i].getCognomeDocente()%></td>
+							<td><%=d[i].getCvDocente()%></td>
+							<td><%=d[i].getCodDocente()%></td>
+						</tr>
+						<%
+						}
+						%>
+					</tbody>
+				</table>
+			</div>
 		</div>
 <jsp:include page="footer.html"/>
 </body>
