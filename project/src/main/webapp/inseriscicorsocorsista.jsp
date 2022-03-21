@@ -27,25 +27,33 @@ if (username != null) {
 			<div class="col-xs-12 col-sm-9">
 				<jsp:include page="side-toggle.html" />
 				<div class="page header">
-					<h3>Inserimento Corsista nel Corso</h3>
+					<h3>Inserimento nel Corso di un Corsista</h3>
 					<div class="table responsive">
 						<form
 							action="/<%=application.getServletContextName()%>/inseriscicorsocorsista"
 							method="post">
+							<div class="row">
 							<table class="table table-striped">
-								<tr>
-									<td><select name="corsi">
+								<tr class="row">
+									<td class="col-md-4"><select name="corsi" class="form-control" >
 											<%
+											String corsoDefault = request.getParameter("corso");
+											corsoDefault = "java";
 											CorsoBC cBC = new CorsoBC();
 											Corso[] corsi = cBC.getAll();
-											for (Corso c : corsi) {
+											for (Corso c : corsi)
+												if (!corsoDefault.equals(c.getNomeCorso())) {
 											%>
 											<option value="<%=c.getCodCorso()%>"><%=c.getNomeCorso()%></option>
+											<%
+											} else {
+											%>
+											<option value="<%=c.getCodCorso()%>" selected><%=c.getNomeCorso()%></option>
 											<%
 											}
 											%>
 									</select></td>
-									<td><select name="corsisti">
+									<td class="col-md-4"><select name="corsisti" class="col-md-3 form-control">
 											<%
 											CorsistaBC csBC = new CorsistaBC();
 											Corsista[] corsisti = csBC.getAll();
@@ -58,10 +66,11 @@ if (username != null) {
 											%>
 									</select></td>
 									<td><input type="submit"
-										value="Inserisci Corsista nel Corso" class="btn btn-primary">
+										value="Inserisci Corsista nel Corso" class="col-md-4 btn btn-primary">
 									</td>
 								</tr>
 							</table>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -75,3 +84,4 @@ if (username != null) {
 } else {
 response.sendRedirect("accessonegato.jsp");
 }
+%>
