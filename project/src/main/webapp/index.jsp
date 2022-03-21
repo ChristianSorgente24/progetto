@@ -10,11 +10,10 @@
 <title>Index</title>
 </head>
 <body>	
-	<div id="IMGsample">
-	<img src ="images/sample course.jpg" />
-	</div>
-	
 	<jsp:include page="nav.jsp"/>
+	<div id="IMGsample">
+		<img src ="images/sample course.jpg" />
+	</div>
 	<jsp:include page="footer.html"/>
 </body>
 	

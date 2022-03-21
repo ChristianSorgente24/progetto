@@ -1,16 +1,12 @@
 .footer-bs {
-	height: 315px;
     background-color: #3c3d41;
 	padding: 60px 40px;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
 	color: rgba(255,255,255,1.00);
 }
 footer{
 	height: 315px;
 	width: 100%;
-	
+	position: absolute;
 	bottom: 0;
 	
 }

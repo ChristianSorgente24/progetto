@@ -9,13 +9,13 @@
             <a class="navbar-brand" href="index.jsp">Project Betacom</a>
         </div>
         <div class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav" style="font:#FFFFFB3">
+            <ul class="nav navbar-nav">
             	<%
 					String admin = (String) session.getAttribute("username");
 					if(admin == null) {
 				%>
               	 <li><a href="login.jsp">
-						<span class="glyphicon glyphicon-log-in"></span> Login
+						<span class="glyphicon glyphicon-log-in" ></span> Login
 					</a></li>
                 <%
 					} else {

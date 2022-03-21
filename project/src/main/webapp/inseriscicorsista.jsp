@@ -24,7 +24,7 @@ if (username != null) {
 	<jsp:include page="nav.jsp"/>
 	<div class="container-fluid">
 		<div class="page-header">
-			<h3>Inserire i dati per effettuare il login</h3>
+			<h3>Inserire i dati per un nuovo corsista</h3>
 		</div>
 		<form action="/<%= application.getServletContextName()%>/InserisciCorsista" method="post"
 		class="form-horizontal">
