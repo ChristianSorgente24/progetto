@@ -20,6 +20,8 @@ if (username != null) {
 
 </head>
 <body>
+<jsp:include page="nav.jsp"/>
+<jsp:include page="sidebar.jsp"/>
 	<jsp:include page="nav.jsp" />
 	<div class="container">
 		<div class="page header">
@@ -55,6 +57,7 @@ if (username != null) {
 		</div>
 	</div>
 	<hr>
+<jsp:include page="footer.html"/>
 </body>
 </html>
 <%
