@@ -25,20 +25,20 @@ errorPage="error.jsp"%>
 						<span class="input-group-addon">
 							<i class="glyphicon glyphicon-user"></i>
 						</span>
-						<input type="text" name="username" placeholder="Username..." class="form-control">
+						<input type="text" name="username" placeholder="Username..." required class="form-control">
 					</div>
 				</div>
 				<div class="col-md-7 control-label"></div>
 			</div>
 			
 			<div class="form-group">
-				<label class="col-md-1 control-label">Codice Admin</label>
+				<label class="col-md-1 control-label">Codice</label>
 				<div class="col-md-4 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon">
 							<i class="glyphicon glyphicon-lock"></i>
 						</span>
-						<input type="text" name="codadmin" placeholder="Codadmin..." class="form-control">
+						<input type="text" name="codadmin" placeholder="Codice..." required class="form-control">
 					</div>
 				</div>
 				<div class="col-md-7 control-label"></div>

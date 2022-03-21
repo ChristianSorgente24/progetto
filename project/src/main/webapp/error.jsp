@@ -33,7 +33,7 @@ if (exception instanceof ClassNotFoundException) {
 
 <body>
 	<jsp:include page="nav.jsp" />
-	<div class="container">
+	<div class="container" style="margin-top: 20px">
 		<div class="jumbotron">
 			<h1><%=titolo%>
 				<span class="glyphicon glyphicon-remove-circle"

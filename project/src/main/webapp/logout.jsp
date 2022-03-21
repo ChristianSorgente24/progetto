@@ -1,5 +1,6 @@
+
 <%
-	session.invalidate();
+session.invalidate();
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -13,9 +14,12 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
-	<div class="container">
+	<div class="container" style="margin-top: 20px">
 		<div class="jumbotron">
-			<h1>Logout <span class="glyphicon glyphicon-remove-circle" style="font-size:35px"></span></h1>
+			<h1>
+				Logout <span class="glyphicon glyphicon-remove-circle"
+					style="font-size: 35px"></span>
+			</h1>
 			<p>Disconnesso</p>
 		</div>
 		<button type="submit" class="btn btn-primary"

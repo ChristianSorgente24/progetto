@@ -33,7 +33,7 @@ public class ControlloLogin extends HttpServlet {
 		 * System.out.println("CodAdmin="+codAdmin);
 		 */
 
-		if (count == 5) {
+		if (count == 4) {
 			session.setAttribute("countLogin", 0);
 			response.sendRedirect("accessonegato.jsp");
 		} else if (username != null) {
@@ -43,9 +43,10 @@ public class ControlloLogin extends HttpServlet {
 				if (adminCheck != -1) {
 					if (adminCheck == codAdmin) {
 						session.setAttribute("username", username);
-						response.sendRedirect("index.jsp");
+						response.sendRedirect("corsi.jsp");
 					} else {
-						session.setAttribute("countLogin", count++);
+						count++;
+						session.setAttribute("countLogin", count);
 						response.sendRedirect("accessoerrato.jsp");
 
 					}
