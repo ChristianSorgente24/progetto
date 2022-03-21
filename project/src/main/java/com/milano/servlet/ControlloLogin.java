@@ -26,12 +26,13 @@ public class ControlloLogin extends HttpServlet {
 		if (session.getAttribute("countLogin") != null)
 			count = (int) session.getAttribute("countLogin");
 
-		/*System.out.println("Count=" + count);
+		/*
+		 * System.out.println("Count=" + count);
+		 * 
+		 * System.out.println("Username="+username);
+		 * System.out.println("CodAdmin="+codAdmin);
+		 */
 
-		System.out.println("Username="+username);
-		System.out.println("CodAdmin="+codAdmin);*/
-		
-		
 		if (count == 5) {
 			session.setAttribute("countLogin", 0);
 			response.sendRedirect("accessonegato.jsp");
@@ -53,10 +54,8 @@ public class ControlloLogin extends HttpServlet {
 				exc.printStackTrace();
 				throw new ServletException(exc.getMessage());
 			}
-		}
-		
-		response.sendRedirect("accessonegato.jsp");
-		
+		} else
+			response.sendRedirect("accessonegato.jsp");
 
 	}
 }
