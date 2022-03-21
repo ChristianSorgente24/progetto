@@ -5,13 +5,12 @@ errorPage="error.jsp"%>
 <head>
 	<%@include file="CDN.html" %>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="css/style.css">
 	<meta charset="ISO-8859-1">
 	<title>Accesso Admin</title>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="page-header">
 			<h3>Inserire i dati per effettuare il login</h3>
 		</div>

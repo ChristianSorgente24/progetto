@@ -6,8 +6,6 @@ if (username != null) {
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
-<%@include file="CDN.html"%>
-
 <jsp:useBean id="docente"
 	class="com.milano.businesscomponent.model.Docente" scope="session" />
 <!DOCTYPE html>
@@ -57,8 +55,8 @@ if (username != null) {
 					</div>
 				</div>
 			</div>
-<jsp:include page="footer.html"/>
-</div>
+		</div>
+	<jsp:include page="footer.html"/>
 </body>
 </html>
 <%

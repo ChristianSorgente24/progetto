@@ -3,7 +3,7 @@
          <ul class="nav">
              <li class="active"><a href="#">Corsi</a></li>
              <li><a href="#">Corsisti</a></li>
-             <li><a href="Docente.jsp">Docenti</a></li>
+             <li><a href="docenti.jsp">Docenti</a></li>
              <li><a href="statistiche.jsp">Statistiche</a></li>
          </ul>
      </div>
