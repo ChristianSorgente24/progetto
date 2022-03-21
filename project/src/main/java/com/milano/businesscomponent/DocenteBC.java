@@ -22,4 +22,12 @@ public class DocenteBC {
 		throw new DAOException(sql);
 	}
 	}
+	public Docente[] getAll() 
+			throws DAOException {
+		try {
+			return DocenteDAO.getFactory().getAll(conn);
+		}catch(SQLException sql) {
+			throw new DAOException(sql);
+		}
+	}
 }	
