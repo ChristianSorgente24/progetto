@@ -26,12 +26,10 @@ public class ControlloLogin extends HttpServlet {
 		if (session.getAttribute("countLogin") != null)
 			count = (int) session.getAttribute("countLogin");
 
-		/*
-		 * System.out.println("Count=" + count);
-		 * 
-		 * System.out.println("Username="+username);
-		 * System.out.println("CodAdmin="+codAdmin);
-		 */
+		/*System.out.println("Count=" + count);
+
+		System.out.println("Username=" + username);
+		System.out.println("CodAdmin=" + codAdmin);*/
 
 		if (count == 4) {
 			session.setAttribute("countLogin", 0);
@@ -48,8 +46,11 @@ public class ControlloLogin extends HttpServlet {
 						count++;
 						session.setAttribute("countLogin", count);
 						response.sendRedirect("accessoerrato.jsp");
-
 					}
+				} else {
+					count++;
+					session.setAttribute("countLogin", count);
+					response.sendRedirect("accessoerrato.jsp");
 				}
 			} catch (DAOException | ClassNotFoundException exc) {
 				exc.printStackTrace();

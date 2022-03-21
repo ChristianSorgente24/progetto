@@ -10,13 +10,13 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
-	<div class="container">
+	<div class="container" style="margin-top: 20px">
 		<div class="jumbotron">
 			<h1>
 				Accesso errato <span class="glyphicon glyphicon-remove-circle"
 					style="font-size: 35px"></span>
 			</h1>
-			<p>Password e/o Username errati</p>
+			<p>Password e/o Username errati, ti rimangono: <%= 5-(int)session.getAttribute("countLogin") %></p>
 		</div>
 		<button type="submit" class="btn btn-primary"
 			onclick="window.history.back()">

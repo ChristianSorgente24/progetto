@@ -10,7 +10,7 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
-	<div class="container">
+	<div class="container" style="margin-top: 20px">
 		<div class="jumbotron">
 			<h1>
 				Accesso negato <span class="glyphicon glyphicon-remove-circle"
