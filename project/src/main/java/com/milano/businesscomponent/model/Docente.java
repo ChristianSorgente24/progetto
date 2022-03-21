@@ -42,8 +42,8 @@ public class Docente {
 	}
 	@Override
 	public String toString() {
-		return "Docente [NomeDocente=" + NomeDocente + ", cognomeDocente=" + cognomeDocente + ", cvDocente=" + cvDocente
-				+ ", codDocente=" + codDocente + "]";
+		return "NomeDocente: " + NomeDocente + ", cognomeDocente: " + cognomeDocente + ", cvDocente: " + cvDocente
+				+ ", codDocente: " + codDocente ;
 	}
 	
 	
