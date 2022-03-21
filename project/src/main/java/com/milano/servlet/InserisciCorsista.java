@@ -27,7 +27,7 @@ public class InserisciCorsista extends HttpServlet {
 		corsisti.setCodCorsista(Long.parseLong(request.getParameter("codCorsista")));
 		corsisti.setPrecedentiFormativi(Byte.parseByte(request.getParameter("PrecendentiFormativi")));
 		
-		response.sendRedirect("index.jsp");
+		
 		
 		try {
 			CorsistaBC cBC = new CorsistaBC();
@@ -36,6 +36,7 @@ public class InserisciCorsista extends HttpServlet {
 			e.printStackTrace();
 			throw new ServletException(e);
 		}
+		response.sendRedirect("index.jsp");
 	}
 
 	}

@@ -21,7 +21,7 @@ public class InserisciCorsoCorsista extends HttpServlet {
 		cs.setCodCorso(Long.parseLong(request.getParameter("corsi")));
 		cs.setCodCorsista(Long.parseLong(request.getParameter("corsisti")));
 		
-		response.sendRedirect("inserimentoriuscito.jsp");
+		
 		try {
 			CorsoCorsistaBC ccBC = new CorsoCorsistaBC();
 			ccBC.create(cs);
@@ -29,5 +29,6 @@ public class InserisciCorsoCorsista extends HttpServlet {
 			e.printStackTrace();
 			throw new ServletException(e);
 		}
+		response.sendRedirect("inserimentoriuscito.jsp");
 	}
 }
