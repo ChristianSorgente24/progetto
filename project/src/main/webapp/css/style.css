@@ -1,19 +1,11 @@
-html {
-	position: relative;
-	min-height: 100%;
-}
+@import url("https://bootswatch.com/flatly/bootstrap.min.css");
 
 body {
-	margin-bottom: 320px;
-	background-color: #F9F9F9;
+  padding-top: 50px;
 }
-
-.navbar-inverse {
-	background-color: #111;
-}
-
-::-webkit-scrollbar {
-	display: none;
+footer {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* Sidebar */
