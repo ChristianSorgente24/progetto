@@ -43,7 +43,7 @@ public class ControlloLogin extends HttpServlet {
 				if (adminCheck != -1) {
 					if (adminCheck == codAdmin) {
 						session.setAttribute("username", username);
-						response.sendRedirect("corsi.jsp");
+						response.sendRedirect("index.jsp");
 					} else {
 						session.setAttribute("countLogin", count++);
 						response.sendRedirect("accessoerrato.jsp");

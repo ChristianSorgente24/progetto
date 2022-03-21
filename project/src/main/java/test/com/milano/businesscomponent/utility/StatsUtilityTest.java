@@ -1,6 +1,6 @@
 package test.com.milano.businesscomponent.utility;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.LinkedList;
 
@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import com.milano.businesscomponent.CorsoBC;
 import com.milano.businesscomponent.model.Corsista;
 import com.milano.businesscomponent.model.Corso;
 import com.milano.businesscomponent.model.Docente;
