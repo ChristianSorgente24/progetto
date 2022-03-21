@@ -51,10 +51,6 @@ errorPage="error.jsp"%>
 			</div>
 		</form>
 	</div>
-<<<<<<< HEAD
 	<footer><jsp:include page="footer.html"/></footer>
-=======
-	<jsp:include page="footer.html"/>
->>>>>>> branch 'master' of https://github.com/ChristianSorgente24/progetto.git
 </body>
 </html>
