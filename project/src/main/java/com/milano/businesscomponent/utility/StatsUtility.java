@@ -25,6 +25,19 @@ public class StatsUtility implements DAOConstants{
 		conn = DBAccess.getConnection();
 	}
 	
+	public  int numeroCorsiTotali() throws ClassNotFoundException, DAOException, IOException {
+	try {
+		PreparedStatement stmt = conn.prepareStatement(SELECT_COUNT_CORSO);
+		ResultSet rs = stmt.executeQuery();
+		int contCorso = 0;
+		if (rs.next()) 
+			contCorso = rs.getInt(1);
+		return contCorso;
+	} catch (SQLException sql) {
+		throw new DAOException(sql);
+	}	
+	}
+	
 	public  int numeroCorsistiTotali() throws ClassNotFoundException, DAOException, IOException {
 		CorsistaBC cBC = new CorsistaBC();
 		return cBC.getAll().length;	

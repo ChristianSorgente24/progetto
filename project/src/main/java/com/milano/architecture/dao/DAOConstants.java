@@ -25,7 +25,8 @@ public interface DAOConstants {
 	String UPDATE_CORSO = "update corso set nomeCorso = ?, dataInizioCorso = ?, dataFineCorso = ?, costoCorso = ?, aulaCorso = ?, codDocente = ? where codCorso = ?";
 	String DELETE_CORSO = "delete from corso where codCorso = ?";
 	String SELECT_CORSO_BYCOD = "select * from corso where codCorso = ?";
-
+	String SELECT_COUNT_CORSO = "select count(*) from corso";
+	
 	//login
 	String SELECT_ADMINPASS = "Select codAdmin from amministratore where username = ?";
 	
@@ -44,5 +45,5 @@ public interface DAOConstants {
 	//N7 Docente che può tenere più tipologie di corso
 	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc";
 	//N8 Corsi con posti disponibili
-	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) <= 12";
+	String SELECT_CORSI_DISPONIBILI = "select codCorso from corsocorsista group by codCorso having count(*) < 12";
 	}
