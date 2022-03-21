@@ -45,7 +45,7 @@ errorPage="error.jsp"%>
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-1">
-					<button type="submit" class="btn btn-warning">
+					<button type="submit" class="btn btn-primary">
 						Login&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
 					</button>
 				</div>

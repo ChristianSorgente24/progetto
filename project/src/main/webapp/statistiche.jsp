@@ -66,7 +66,8 @@
 	      
 	       <tr>
 	        <td>Docente con pi&ugrave; corsi: </td>
-	        <td>
+	        <% if (docenteMax.size()>1) { %>
+	        <td>	 	
 	        	<table class="table table-striped">
 	        		<thead>
 	        			 <tr>
@@ -91,8 +92,13 @@
 	        		 	</tr>
 	        		 </tbody>
 	        	</table>
-	       	 
 	        </td>
+	       	 <% } else { %>
+	       	 	<td><%= docenteMax.get(0).getNomeDocente() %></td>	
+	        	<td><%= docenteMax.get(0).getCognomeDocente() %></td>
+	        	<td><%= docenteMax.get(0).getCvDocente() %></td>
+	        	<td><%= docenteMax.get(0).getCodDocente() %></td>
+	        <% } %>
 	      </tr>
 	      
 	    </tbody>
