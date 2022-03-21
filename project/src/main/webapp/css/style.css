@@ -1,3 +1,8 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 50px;
   margin-bottom:320px;
@@ -8,7 +13,20 @@ footer {
 }
 
 #side-toggle {
-  	visibility: hidden;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+	footer{
+		height: 700px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+	}
+	
+	body {
+	  margin-bottom:700px;
+	}
 }
 
 /* Sidebar */
@@ -21,7 +39,7 @@ footer {
     background: white;
     
   }
-		
+    
   .row-offcanvas-left
   .sidebar-offcanvas {
     left: -25%;
@@ -35,16 +53,18 @@ footer {
     position: absolute;
     top: 0;
     width: 25%;
-    margin-left: 12px;
+    margin-left: 0px;
   }
   
-	#side-toggle {
-	  	visibility: visible;
-	  	margin-top: 10px;
-	  	height: 28px;
-	  	width: 30px;
-	}
+  #side-toggle {
+      visibility: visible;
+      margin-top: 10px;
+      height: 28px;
+      width: 30px;
+  }
 }
+
+
 
 #sidebar {
     padding:15px;
@@ -54,7 +74,4 @@ footer {
 #IMGsample img {
    width: 100%;
 }
-html {
-  position: relative;
-  min-height: 100%;
-}
+
