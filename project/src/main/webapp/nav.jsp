@@ -6,23 +6,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project Betacom</a>
+            <a class="navbar-brand" href="index.jsp">Project Betacom</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
             	<%
 					String admin = (String) session.getAttribute("username");
 					if(admin == null) {
 				%>
-              	 <li><a href="index.jsp">
+              	 <li><a href="login.jsp">
 						<span class="glyphicon glyphicon-log-in"></span> Login
 					</a></li>
                 <%
 					} else {
 				%>
 				<li>
-					<span class="glyphicon glyphicon-off"></span> <%=admin%>
-				</li>
+					<a href="#">
+						<span class="glyphicon glyphicon-user"></span> <%=admin%>
+				</a></li>
 				<li><a href="logout.jsp">
 					<span class="glyphicon glyphicon-off"></span> Logout
 				</a></li>
