@@ -41,14 +41,13 @@ private static AdminFacade cF;
 	
 	public Corso getByCodCorso(long codCorso) 
 			throws DAOException, ClassNotFoundException, IOException {
-		CorsoBC cBC = new CorsoBC();
-		return cBC.getByCodCorso(codCorso);
+		return CorsoBC.getByCodCorso(codCorso);
 	}
 	
 	public Corsista getByCodCorsista(long codCorsista) 
 			throws DAOException, ClassNotFoundException, IOException {
-		CorsistaBC cBC = new CorsistaBC();
-		return cBC.getByCodCorsista(codCorsista);
+
+		return CorsistaBC.getByCodCorsista(codCorsista);
 	}
 	
 //--------------------------------------------------------GETALL----------------------------------------------
@@ -78,15 +77,13 @@ private static AdminFacade cF;
 
 	public void deleteCorso(Corso corso) 
 			throws ClassNotFoundException, DAOException, IOException {
-		CorsoBC cBC = new CorsoBC();
-		cBC.deleteCorso(corso);
+		CorsoBC.deleteCorso(corso);
 	}
 	
 
 	public void deleteCorsista(Corsista corsista) 
 			throws ClassNotFoundException, DAOException, IOException {
-		CorsistaBC cBC = new CorsistaBC();
-		cBC.deleteCorsista(corsista);
+		CorsistaBC.deleteCorsista(corsista);
 	}
 	
 
@@ -101,14 +98,12 @@ private static AdminFacade cF;
 
 	public void updateCorso(Corso corso) 
 			throws ClassNotFoundException, DAOException, IOException {
-		CorsoBC corsoBC = new CorsoBC();
-		corsoBC.deleteCorso(corso);
+		CorsoBC.deleteCorso(corso);
 	}
 	
 	public void updateCorsista(Corsista corsista) 
 			throws ClassNotFoundException, DAOException, IOException {
-		CorsistaBC corsistaBC = new CorsistaBC();
-		corsistaBC.deleteCorsista(corsista);
+		CorsistaBC.deleteCorsista(corsista);
 	}
 	
 

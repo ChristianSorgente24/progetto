@@ -23,10 +23,11 @@ if (username != null) {
 			<jsp:include page="sidebar.jsp"/>
 				<div class="col-xs-12 col-sm-9">
 					<jsp:include page="side-toggle.html"/>
-					<div class="page header">
-						<h3>Docenti</h3>
-					</div>
-					<div class="table responsive">
+					<div class="page-header">
+					<h3>
+						<strong>Docenti</strong>
+					</h3>
+				</div>
 						<table class="table table-striped">
 							<thead>
 								<tr>
@@ -55,7 +56,6 @@ if (username != null) {
 					</div>
 				</div>
 			</div>
-		</div>
 	<jsp:include page="footer.html"/>
 </body>
 </html>

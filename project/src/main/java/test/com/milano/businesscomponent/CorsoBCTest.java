@@ -29,7 +29,7 @@ class CorsoBCTest {
 			assertNotNull(corso2);
 			System.out.println("Corsi Creati");
 			
-			System.out.println(cBC.getByCodCorso(corso.getCodCorso())); 
+			System.out.println(CorsoBC.getByCodCorso(corso.getCodCorso())); 
 			
 			/* Lancia IOException
 			fine = new GregorianCalendar(2002, 1, 10, 0, 0, 0);
