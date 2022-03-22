@@ -77,7 +77,6 @@ public class CorsoCorsistaDAO extends CorsoCorsistaDAOAdapter implements DAOCons
 			for (int i = 0; i < corsi.length; i++) {
 				if (rs.next()) {
 					corsi[i] = rs.getLong(1);
-					System.out.println("Corso ID: " + corsi[i]);
 				}
 			}
 		} catch (SQLException sql) {
