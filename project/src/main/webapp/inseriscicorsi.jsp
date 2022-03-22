@@ -85,8 +85,8 @@
 			$('#dp2').datepicker({
 				format : 'dd/mm/yyyy',
 				autoclose: true,
-				startDate: new Date($('#dp1').date),
-				endDate: new Date()
+				startDate:'01/01/1900',
+				endDate: '01/01/3000'
 			}).on(
 				'changeDate',
 				function(e){
@@ -130,14 +130,14 @@
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-user"></i>
 					</span>
-					<select name="corsisti" class="col-md-3 form-control">
+					<select name="codDocente" class="col-md-3 form-control">
 					<%
 					  DocenteBC dBC = new DocenteBC();
 					  Docente[] docenti = dBC.getAll();
 					  for (Docente d : docenti) {
 					%>
 					  <option value="<%=d.getCodDocente()%>">
-					  		<%= d.getNomeDocente() + ": " + d.getCodDocente() %>
+					  		<%= d.getCodDocente() %>
 					  </option>
 					<% } %>	
 					</select>			

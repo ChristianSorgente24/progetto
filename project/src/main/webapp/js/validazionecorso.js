@@ -13,8 +13,8 @@ $(document).ready(function() {
 						message : 'Il campo nome non pu&ograve; essere vuoto'
 					}, 
 					regexp : {
-						regexp : /^[a-zA-Z ,.'-]{2,30}$/,
-						message : 'Da 2 a 30 caratteri (Solo lettere accettate)'
+						regexp : /^[a-zA-Z0-9]{2,30}$/,
+						message : 'Da 2 a 30 caratteri (Solo lettere e numeri accettati)'
 					}
 				}
 			}, 
@@ -25,7 +25,7 @@ $(document).ready(function() {
 						message : 'Il campo costo corso non pu&ograve; essere vuoto'
 					}, 
 					regexp : {
-						regexp : /^[1-9]{1,4}$/,
+						regexp : /^[0-9]{1,4}$/,
 						message : 'Da 1 a 4 cifre (Solo numeri accettati)'
 					}
 				}
