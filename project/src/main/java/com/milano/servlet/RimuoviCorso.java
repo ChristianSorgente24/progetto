@@ -18,10 +18,13 @@ public class RimuoviCorso extends HttpServlet {
 			throws ServletException, IOException {
 		long cod = Long.parseLong(request.getParameter("corso"));
 		try {
-			CorsoBC.deleteCorso(CorsoBC.getByCodCorso(cod));
+			CorsoBC cBC = new CorsoBC();
+			CorsoBC.deleteCorso(cBC.getByCodCorso(cod));
 		} catch (DAOException e) {
 			e.printStackTrace();
 			throw new ServletException(e);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 		response.sendRedirect("corsi.jsp");
 	}
