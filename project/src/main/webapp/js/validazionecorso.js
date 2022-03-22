@@ -26,7 +26,7 @@ $(document).ready(function() {
 					}, 
 					regexp : {
 						regexp : /^\d+(.\d+)*$/,
-						message : 'inserire numeri con la virgola (carattere accettato per la virgola",")'
+						message : 'inserire numeri con la virgola (carattere accettato per la virgola".")'
 					}
 				}
 			},
