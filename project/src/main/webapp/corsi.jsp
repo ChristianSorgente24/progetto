@@ -157,10 +157,10 @@ if (username != null) {
 													formaction="/<%=application.getServletContextName()%>/rimuovicorso?corso=<%=corso.getCodCorso()%>"
 													class="btn btn-danger">Cancella corso</button>
 											</form>
-											<form action="/<%=application.getServletContextName()%>/modificacorsi.jsp" method="POST" >
-												
-												<button type="submit" class="btn btn-primary" onclick="<% session.setAttribute("corso", corso.getCodCorso()); %>">Modifica corso</button>
-												
+											<form>
+												<button type="submit" formmethod="POST"
+													formaction="/<%=application.getServletContextName()%>/catturacodice?corso=<%=corso.getCodCorso()%>"
+													class="btn btn-primary">Modifica corso</button>
 											</form>
 											<h3>Informazioni corso</h3>
 											<%
