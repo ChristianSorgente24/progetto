@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#userForm').bootstrapValidator({
+	$('#corsoForm').bootstrapValidator({
 		feedbackIcons: {
 			valid : 'glyphicon glyphicon-ok',
 			invalid : 'glyphicon glyphicon-remove',
@@ -25,7 +25,7 @@ $(document).ready(function() {
 						message : 'Il campo costo corso non pu&ograve; essere vuoto'
 					}, 
 					regexp : {
-						regexp : /^[0-9]{1,4}$/,
+						regexp : /^[1-9]{1,4}$/,
 						message : 'Da 1 a 4 cifre (Solo numeri accettati)'
 					}
 				}

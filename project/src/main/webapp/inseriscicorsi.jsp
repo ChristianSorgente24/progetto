@@ -24,7 +24,7 @@
 			<h3><strong>Inseririsci nuovo corso</strong></h3>
 		</div>
 		<form action="/<%= application.getServletContextName()%>/InserisciCorso" method="post"
-		class="form-horizontal">
+		class="form-horizontal" id="corsoForm">
 		
 		<div class="form-group">
 			<label class="col-md-1 control-label">Nome corso</label>
@@ -61,7 +61,7 @@
 			}).on(
 				'changeDate',
 				function(e){
-					$('#userForm').bootstrapValidator('revalidateField', 'dataInizio');
+					$('#corsoForm').bootstrapValidator('revalidateField', 'dataInizio');
 			});
 		});
 	</script>
@@ -88,9 +88,10 @@
 			}).on(
 				'changeDate',
 				function(e){
-					$('#userForm').bootstrapValidator('revalidateField', 'dataFine');
+					$('#corsoForm').bootstrapValidator('revalidateField', 'dataFine');
 			});
 		});
+		
 	</script>
 	
 		<div class="form-group">
