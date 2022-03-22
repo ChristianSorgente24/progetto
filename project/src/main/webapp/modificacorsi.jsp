@@ -179,6 +179,7 @@ if (username != null) {
 	<jsp:include page="footer.html" />
 </body>
 </html>
+
 <%
 } else {
 response.sendRedirect("accessonegato.jsp");
