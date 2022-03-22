@@ -6,7 +6,8 @@ public interface DAOConstants {
 	String SELECT_CORSISTA_SEQ = "Select CodGeneratorCorsista_seq.nextval from dual";
 	
 	//CRUD corsista
-	String SELECT_CORSISTA = "Select * from corsista order by cognomeCorsista";
+	String SELECT_CORSISTA = "Select * from corsista";
+	String SELECT_CORSISTA_ORD = "Select * from corsista order by cognomeCorsista";
 	String UPDATE_CORSISTA = "Update corsista set nomeCorsista = ?, cognomeCorsista = ?, precedentiFormativi = ? where codCorsista = ?";
 	String DELETE_CORSISTA = "Delete from corsista where codCorsista = ?";
 	String SELECT_CORSISTA_BYCOD = "select * from corsista where codCorsista = ?";

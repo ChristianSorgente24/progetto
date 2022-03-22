@@ -100,7 +100,7 @@ public class CorsistaDAO implements GenericDAO<Corsista>, DAOConstants{
 			Statement stmt = conn.createStatement(
 					ResultSet.TYPE_SCROLL_INSENSITIVE,
 					ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = stmt.executeQuery(SELECT_CORSISTA);
+			ResultSet rs = stmt.executeQuery(SELECT_CORSISTA_ORD);
 			rs.last();
 			corsisti = new Corsista[rs.getRow()];
 			rs.beforeFirst();
