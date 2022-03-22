@@ -11,12 +11,12 @@
 <body>
 	<jsp:include page="nav.jsp" />
 	<div class="container" style="margin-top: 20px">
-		<div class="jumbotron">
-			<h1>
+		<div class="jumbotron" style="background-color:#ff9999">
+			<h1 style="color:#ff1a1a">
 				Accesso negato <span class="glyphicon glyphicon-remove-circle"
 					style="font-size: 35px"></span>
 			</h1>
-			<p>Non hai effettuato il login</p>
+			<p style="color:#ff4d4d">Non hai effettuato il login</p>
 		</div>
 		<button type="submit" class="btn btn-primary"
 			onclick="location.href = 'login.jsp';">
