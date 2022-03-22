@@ -15,7 +15,7 @@ errorPage="error.jsp"%>
 			<h3>Inserire i dati per effettuare il login</h3>
 		</div>
 		<form action="/<%= application.getServletContextName()%>/controlloLogin" method="post"
-		class="form-horizontal">
+		class="form-horizontal" style="margin-bottom:20px">
 		
 			<div class="form-group">
 				<label class="col-md-1 control-label">Username</label>

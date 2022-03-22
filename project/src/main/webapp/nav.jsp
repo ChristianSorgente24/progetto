@@ -17,7 +17,9 @@
 				String admin = (String) session.getAttribute("username");
 				if (admin == null) {
 				%>
-				<li><a href="login.jsp" class="nav-text"> <span
+				<li><a href="login.jsp"  style="color: #FFFFFFCC;"
+					onmouseover="this.style.color='#FFFFFFB3'"
+					onmouseout="this.style.color='#FFFFFFCC'"> <span
 						class="glyphicon glyphicon-log-in"></span> Login
 				</a></li>
 				<%

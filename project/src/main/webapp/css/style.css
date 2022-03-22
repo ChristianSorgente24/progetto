@@ -5,7 +5,7 @@ html {
 
 body {
 	padding-top: 50px;
-	margin-bottom: 320px;
+	margin-bottom: 315px;
 }
 
 #side-toggle {
@@ -20,7 +20,7 @@ body {
 		bottom: 0;
 	}
 	body {
-		margin-bottom: 720px;
+		margin-bottom: 700px;
 	}
 }
 
