@@ -71,3 +71,10 @@ body {
    width: 100%;
 }
 
+.nav-text {
+	color: #FFFFFFB3
+}
+
+.nav-text:hover {
+	color: #FFFFFFCC
+}
