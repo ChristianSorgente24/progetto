@@ -1,10 +1,9 @@
 package test.com.milano.architecture.dao;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.Date;
 
 import org.junit.jupiter.api.AfterEach;
@@ -13,11 +12,8 @@ import org.junit.jupiter.api.Test;
 
 import com.milano.architecture.dao.CorsistaDAO;
 import com.milano.architecture.dao.CorsoCorsistaDAO;
-import com.milano.architecture.dao.CorsoDAO;
 import com.milano.architecture.dao.DAOException;
 import com.milano.architecture.dbaccess.DBAccess;
-import com.milano.businesscomponent.CorsoBC;
-import com.milano.businesscomponent.CorsoCorsistaBC;
 import com.milano.businesscomponent.model.Corsista;
 import com.milano.businesscomponent.model.Corso;
 import com.milano.businesscomponent.model.CorsoCorsista;
