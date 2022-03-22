@@ -1,3 +1,5 @@
+<%@page import="com.milano.businesscomponent.model.Docente"%>
+<%@page import="com.milano.businesscomponent.DocenteBC"%>
 <%
 	String username = (String) session.getAttribute("username");
 	if (username != null) {
@@ -83,7 +85,7 @@
 			$('#dp2').datepicker({
 				format : 'dd/mm/yyyy',
 				autoclose: true,
-				startDate: '01/01/1900',
+				startDate: new Date($('#dp1').date),
 				endDate: new Date()
 			}).on(
 				'changeDate',
@@ -128,7 +130,17 @@
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-user"></i>
 					</span>
-					<input type="text" name="codDocente" id="codDocente" placeholder="Codice docente..." class="form-control">
+					<select name="corsisti" class="col-md-3 form-control">
+					<%
+					  DocenteBC dBC = new DocenteBC();
+					  Docente[] docenti = dBC.getAll();
+					  for (Docente d : docenti) {
+					%>
+					  <option value="<%=d.getCodDocente()%>">
+					  		<%= d.getNomeDocente() + ": " + d.getCodDocente() %>
+					  </option>
+					<% } %>	
+					</select>			
 				</div>
 			</div>
 			<div class="col-md-7 control-label" id="infoCodDocente"></div>

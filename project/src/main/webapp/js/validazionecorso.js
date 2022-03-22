@@ -44,18 +44,6 @@ $(document).ready(function() {
 				}
 			}, 
 			
-			codDocente : {
-				container : '#infoCodDocente',
-				validators : {
-					notEmpty : {
-						message : 'Il campo codice docente non pu&ograve; essere vuoto'
-					}, 
-					regexp : {
-						regexp : /^[0-9]{4}$/,
-						message : 'inserire 5 cifre per il codice docente'
-					}
-				}
-			}, 
 			dataInizio : {
 				container : '#infoDataInizio',
 				validators : {
