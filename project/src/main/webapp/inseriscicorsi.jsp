@@ -53,20 +53,7 @@
 			</div>
 			<div class="col-md-7 control-label" id="infoDataInizio"></div>
 		</div>
-	<script>
-		$(function() {
-			$('#dp1').datepicker({
-				format : 'dd/mm/yyyy',
-				autoclose: true,
-				startDate: '01/01/1900',
-				endDate: new Date()
-			}).on(
-				'changeDate',
-				function(e){
-					$('#corsoForm').bootstrapValidator('revalidateField', 'dataInizio');
-			});
-		});
-	</script>
+
 		<div class="form-group">
 			<label class="col-md-1 control-label">Data fine corso</label>
 			<div class="col-md-4 inputGroupContainer">
@@ -80,21 +67,7 @@
 			<div class="col-md-7 control-label" id="infoDataFine"></div>
 		</div>
 
-	<script>
-		$(function() {
-			$('#dp2').datepicker({
-				format : 'dd/mm/yyyy',
-				autoclose: true,
-				startDate:'01/01/1900',
-				endDate: '01/01/3000'
-			}).on(
-				'changeDate',
-				function(e){
-					$('#corsoForm').bootstrapValidator('revalidateField', 'dataFine');
-			});
-		});
-		
-	</script>
+
 	
 		<div class="form-group">
 			<label class="col-md-1 control-label">Costo corso</label>
@@ -159,7 +132,37 @@
 	</div>	
 	</div>
 	</div>
+	<script type="text/javascript">
+	$(function () {
+        $("#dp1").datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            startDate: '01/01/1900',
+            endDate: '01/01/3000'
+        }).on('changeDate',function (e) {
+                $('#corsoForm').bootstrapValidator('revalidateField', 'dataInizio');
+        }).on('hide', function () {
+                console.log("ad");
+                $("#dp2").datepicker("setStartDate",
+                    new Date($('#dp1').datepicker('getDate'))
+                );
+                $("#dp1").datepicker({ dateFormat: "dd/mm/yy" });
+        });
+    });
+
+    $(function () {
+        $("#dp2").datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            startDate: '01/01/1900',
+            endDate: '01/01/3000'
+        }).on('changeDate',
+            function (e) {
+                $('#corsoForm').bootstrapValidator('revalidateField', 'dataInizio');
+        })
+    });
 	
+	</script>
 </body>
 <jsp:include page="footer.html"/>
 </html>
