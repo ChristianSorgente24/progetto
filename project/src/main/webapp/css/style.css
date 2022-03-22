@@ -7,10 +7,6 @@ body {
   padding-top: 50px;
   margin-bottom:320px;
 }
-footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
 
 #side-toggle {
     visibility: hidden;
