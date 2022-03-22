@@ -62,7 +62,7 @@ public class CorsoBC {
 
 	}
 
-	public static Corso getByCodCorso(long codCorso) throws DAOException {
+	public Corso getByCodCorso(long codCorso) throws DAOException {
 
 		try {
 			return CorsoDAO.getFactory().getByCod(conn, codCorso);

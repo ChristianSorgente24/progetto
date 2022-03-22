@@ -21,6 +21,7 @@ public interface DAOConstants {
 	String SELECT_CORSOCORSISTA = "Select * from corsocorsista";
 	String DELETE_CORSOCORSISTA = "Delete from corsocorsista where codCorso = ? AND codCorsista = ?";
 	String SELECT_CORSOCORSISTA_BYCOD = "select * from corsocorsista where codCorso = ? AND codCorsista = ?";
+	String SELECT_CORSI_BYCODCORSITA = "select codCorso from corsocorsista where codCorsista = ?";
 	
 	//getcorsistibycodcorso
 	

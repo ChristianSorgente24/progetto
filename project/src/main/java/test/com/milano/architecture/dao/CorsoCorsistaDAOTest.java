@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.junit.jupiter.api.AfterEach;
@@ -15,6 +16,8 @@ import com.milano.architecture.dao.CorsoCorsistaDAO;
 import com.milano.architecture.dao.CorsoDAO;
 import com.milano.architecture.dao.DAOException;
 import com.milano.architecture.dbaccess.DBAccess;
+import com.milano.businesscomponent.CorsoBC;
+import com.milano.businesscomponent.CorsoCorsistaBC;
 import com.milano.businesscomponent.model.Corsista;
 import com.milano.businesscomponent.model.Corso;
 import com.milano.businesscomponent.model.CorsoCorsista;
@@ -41,7 +44,7 @@ class CorsoCorsistaDAOTest {
 		corso.setDataInizioCorso(new Date());
 		corso.setNomeCorso("Biologia");
 		
-		corsista.setCodCorsista(1844L);
+		corsista.setCodCorsista(1844);
 		corsista.setCognomeCorsista("Brambilla");
 		corsista.setNomeCorsista("Laura");
 		corsista.setPrecedentiFormativi((byte) 1);
@@ -58,9 +61,14 @@ class CorsoCorsistaDAOTest {
 	@Test
 	void testCreate() {
 		try {
-			CorsoDAO.getFactory().create(conn, corso);
+			//CorsoDAO.getFactory().create(conn, corso);
 			CorsistaDAO.getFactory().create(conn, corsista);
 			CorsoCorsistaDAO.getFactory().create(conn, corsoCorsista);
+			
+			
+			long[] corsiID = CorsoCorsistaDAO.getFactory().getCorsi(conn, corsista.getCodCorsista());
+			for(long c: corsiID)
+				System.out.println(c);
 			
 		}catch(DAOException ex) {
 			ex.printStackTrace();
@@ -78,6 +86,7 @@ class CorsoCorsistaDAOTest {
 			
 			conn = DBAccess.getConnection();
 			CorsoCorsistaDAO.getFactory().delete(conn, corsoCorsista);
+			CorsistaDAO.getFactory().delete(conn, corsista);
 			corsoCorsista = null;
 			conn.commit();
 			System.out.println("corsoCorsista eliminato");

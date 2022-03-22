@@ -18,8 +18,9 @@ public class RimuoviCorsista extends HttpServlet {
 			throws ServletException, IOException {
 		long cod = Long.parseLong(request.getParameter("codCorsista"));
 		try {
-			CorsistaBC.deleteCorsista(CorsistaBC.getByCodCorsista(cod));
-		}catch (DAOException e) {
+			CorsistaBC cBC = new CorsistaBC();
+			cBC.deleteCorsista(CorsistaBC.getByCodCorsista(cod));
+		}catch (DAOException | ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}	
 	}

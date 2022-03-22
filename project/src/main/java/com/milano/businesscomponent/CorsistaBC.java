@@ -36,7 +36,7 @@ public class CorsistaBC {
 		}
 	}
 	
-	public static void deleteCorsista(Corsista corsista) 
+	public void deleteCorsista(Corsista corsista) 
 			throws DAOException {
 		try {
 			CorsistaDAO.getFactory().delete(conn, corsista);
