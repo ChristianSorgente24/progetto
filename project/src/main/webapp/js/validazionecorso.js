@@ -25,8 +25,8 @@ $(document).ready(function() {
 						message : 'Il campo costo corso non pu&ograve; essere vuoto'
 					}, 
 					regexp : {
-						regexp : /^[0-9.]{1,4}$/,
-						message : 'Da 1 a 4 cifre (Solo numeri accettati)'
+						regexp : /^\d+(,\d+)*$/,
+						message : 'inserire numeri con la virgola (carattere accettato per la virgola",")'
 					}
 				}
 			},
