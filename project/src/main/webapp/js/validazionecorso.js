@@ -25,7 +25,7 @@ $(document).ready(function() {
 						message : 'Il campo costo corso non pu&ograve; essere vuoto'
 					}, 
 					regexp : {
-						regexp : /^\d+(,\d+)*$/,
+						regexp : /^\d+(.\d+)*$/,
 						message : 'inserire numeri con la virgola (carattere accettato per la virgola",")'
 					}
 				}
