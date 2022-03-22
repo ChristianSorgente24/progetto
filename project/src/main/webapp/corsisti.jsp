@@ -24,11 +24,11 @@
 				<div class="col-xs-12 col-sm-9">
 					<jsp:include page="side-toggle.html"/>
 					<div class="page-header">
-					<h3>
-						<strong>Elenco Corsisti</strong>
-					</h3>
+						<h3>
+							<span><strong >Elenco Corsisti</strong></span>
+						</h3>
 				</div>
-						<table class="table table-striped">
+						<table class="table table-striped table-hover">
 							<thead>
 								<tr>
 									<th>ID Corsista</th>
@@ -42,7 +42,7 @@
 								Corsista[] d = AdminFacade.getInstance().getAllCorsista();
 								for (int i = 0; i < d.length; i++) {
 								%>
-								<tr>
+								<tr onclick="window.location='corsista.jsp?corsista=<%=d[i].getCodCorsista()%>';" style="cursor:pointer">
 									<td><%=d[i].getCodCorsista()%></td>
 									<td><%=d[i].getNomeCorsista()%></td>
 									<td><%=d[i].getCognomeCorsista()%></td>
@@ -61,6 +61,9 @@
 								%>
 							</tbody>
 						</table>
+						<a href="inseriscicorsista.jsp">
+							<input style="margin-left: 20px;" type="submit" class="btn btn-success" value="Nuova Corsista"/>
+						</a>
 					</div>
 				</div>
 			</div>
