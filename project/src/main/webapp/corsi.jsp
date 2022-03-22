@@ -32,7 +32,7 @@ if (username != null) {
 				<jsp:include page="side-toggle.html" />
 				<div class="span12">
 					<div class="menu">
-						<a style="margin-left: 20px; margin-bottom: 20px;" 
+						<a style="margin-top: 20px; margin-bottom: 20px;" 
 							href="/<%=application.getServletContextName()%>/inseriscicorsi.jsp" class="btn btn-success">
 							Inserisci nuovo corso  <span class="glyphicon glyphicon-plus"></span></a>
 						<div class="panel-group" id="accordion" role="tablist"
