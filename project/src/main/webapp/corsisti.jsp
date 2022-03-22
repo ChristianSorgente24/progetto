@@ -64,7 +64,13 @@ if (username != null) {
 								href="/<%=application.getServletContextName()%>/rimuoviCorsista?codCorsista=<%=d[i].getCodCorsista()%>"
 								class="btn btn-danger"> Elimina Corsista <span
 									class="glyphicon glyphicon-minus"></span>
-							</a></td>
+							</a>
+							<a
+								href="/<%=application.getServletContextName()%>/modificacorsista.jsp?corsista=<%=d[i].getCodCorsista()%>"
+								class="btn btn-primary"> Modifica Corsista <span
+									class="glyphicon glyphicon-wrench"></span>
+							</a>
+							</td>
 
 						</tr>
 						<%
