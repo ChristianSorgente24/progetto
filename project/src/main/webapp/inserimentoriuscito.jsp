@@ -20,8 +20,8 @@
 				<h3>Operazione riuscita</h3>
 			</div>
 			<div class="panel-body">
-				<p>Per iscrivere altri corsicorsisti:
-				<a href="inseriscicorsocorsista.jsp">cliccare qui</a></p>
+				<!--<p>Per iscrivere altri corsicorsisti:
+				<a href="inseriscicorsocorsista.jsp">cliccare qui</a></p>-->
 				<p>Per creare altri corsi:
 				<a href="inseriscicorsi.jsp">cliccare qui</a></p>
 				<p>Per iscrivere altri corsisti:
