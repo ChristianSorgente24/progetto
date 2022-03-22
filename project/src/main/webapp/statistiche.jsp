@@ -31,7 +31,7 @@
 				</div>
 				<%
 				int ncorsisti = AdminFacade.getInstance().numeroCorsistiTotali();
-				String corso = AdminFacade.getInstance().corsoPiuFrequentato();
+				String corso = AdminFacade.getInstance().getByCodCorso(Long.parseLong(AdminFacade.getInstance().corsoPiuFrequentato())).getNomeCorso();
 				Date ultimoCorso = AdminFacade.getInstance().inizioUltimoCorso();
 				SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 				Double mediaCorsi = AdminFacade.getInstance().durataMediaCorsi();
@@ -64,7 +64,7 @@
 						</tr>
 						<tr>
 							<td>Durata media dei corsi:</td>
-							<td><%=mediaCorsi%> giorni</td>
+							<td><%=mediaCorsi.intValue()%> giorni lavorativi</td>
 						</tr>
 
 						<tr>
