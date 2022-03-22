@@ -12,10 +12,10 @@
 	<jsp:include page="nav.jsp" />
 	<div class="container" style="margin-top: 20px">
 		<div class="jumbotron">
-			<h1>Errore 404</h1>
+			<h1>Errore 404  <span class="glyphicon glyphicon-remove-circle"
+					style="font-size: 35px"></span></h1>
 			<p>
-				Pagina non trovata <span class="glyphicon glyphicon-remove-circle"
-					style="font-size: 35px"></span>
+				Pagina non trovata
 			</p>
 		</div>
 		<button type="submit" class="btn btn-primary"
