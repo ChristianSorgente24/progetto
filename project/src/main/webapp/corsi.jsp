@@ -156,8 +156,9 @@ if (username != null) {
 												<button type="submit" formmethod="POST"
 													formaction="/<%=application.getServletContextName()%>/rimuovicorso?corso=<%=corso.getCodCorso()%>"
 													class="btn btn-danger">Cancella corso</button>
-												<button disabled type="submit" class="btn btn-primary">
-													Modifica corso</button>
+												<button type="submit" formmethod="POST"
+													formaction="/<%=application.getServletContextName()%>/modificacorso?corso=<%=corso.getCodCorso()%>"
+													class="btn btn-danger">Modifica corso</button>
 											</form>
 											<h3>Informazioni corso</h3>
 											<%
