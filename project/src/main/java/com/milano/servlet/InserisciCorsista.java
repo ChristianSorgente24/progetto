@@ -33,8 +33,6 @@ public class InserisciCorsista extends HttpServlet {
 		}
 		corsista.setPrecedentiFormativi(Byte.parseByte(request.getParameter("precedentiFormativi")));
 		
-		System.out.println(corsista.toString());
-		
 		try {
 			CorsistaBC cBC = new CorsistaBC();
 			cBC.createCorsista(corsista);

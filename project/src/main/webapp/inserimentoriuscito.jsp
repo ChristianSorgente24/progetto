@@ -1,3 +1,7 @@
+<%
+	String username = (String) session.getAttribute("username");
+	if (username != null) {
+%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -28,7 +32,16 @@
 				<a href="inseriscicorsista.jsp">cliccare qui</a></p>
 			</div>
 		</div>
+		<button type="submit" class="btn btn-primary"
+			onclick="location.href = 'corsisti.jsp';" style="margin-bottom: 10px">
+			<span class="glyphicon glyphicon-arrow-left" style="font-size: 15px"></span>&nbsp;Torna alla Lista Corsisti
+		</button>
 	</div>	
 	<footer class="footer"><%@include file="footer.html"%></footer>
 </body>
 </html>
+<%
+	} else {
+	response.sendRedirect("accessonegato.jsp");
+	}
+%>

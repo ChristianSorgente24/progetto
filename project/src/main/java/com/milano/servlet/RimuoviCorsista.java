@@ -14,12 +14,13 @@ import com.milano.businesscomponent.CorsistaBC;
 public class RimuoviCorsista extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		long cod = Long.parseLong(request.getParameter("codCorsista"));
 		try {
 			CorsistaBC cBC = new CorsistaBC();
 			cBC.deleteCorsista(CorsistaBC.getByCodCorsista(cod));
+			response.sendRedirect("corsisti.jsp");
 		}catch (DAOException | ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}	
