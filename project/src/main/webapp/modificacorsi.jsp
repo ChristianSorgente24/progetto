@@ -20,6 +20,10 @@ if (username != null) {
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
+	<%
+		Corso c = AdminFacade.getInstance().getByCodCorso(Long.parseLong(request.getParameter("corso")));
+	
+	%>
 	<div class="container-fluid">
 		<div class="row row-offcanvas row-offcanvas-left">
 			<jsp:include page="sidebar.jsp" />
@@ -41,10 +45,10 @@ if (username != null) {
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-list-alt"></i>
 								</span> <input type="text" name="nome" id="nome"
-									value="<%=AdminFacade.getInstance().getByCodCorso((long) session.getAttribute("corso")).getNomeCorso()%>"
+									value="<%= c.getNomeCorso()%>"
 									class="form-control"> <input type="hidden"
 									name="codice"
-									value="<%=AdminFacade.getInstance().getByCodCorso((long) session.getAttribute("corso")).getCodCorso()%>">
+									value="<%=c.getCodCorso()%>">
 							</div>
 						</div>
 						<div class="col-md-7 control-label" id="infoNome"></div>
@@ -57,7 +61,7 @@ if (username != null) {
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-calendar"></i>
 								</span> <input type="text" name="dataInizio" id="dataInizio"
-									value="<%=new SimpleDateFormat("dd/MM/yyyy").format(AdminFacade.getInstance().getByCodCorso((long) session.getAttribute("corso")).getDataInizioCorso())%>"
+									value="<%=new SimpleDateFormat("dd/MM/yyyy").format(c.getDataInizioCorso())%>"
 									class="form-control">
 							</div>
 						</div>
@@ -87,7 +91,7 @@ if (username != null) {
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-calendar"></i>
 								</span> <input type="text" name="dataFine" id="dataFine"
-									value="<%=new SimpleDateFormat("dd/MM/yyyy").format(AdminFacade.getInstance().getByCodCorso((long) session.getAttribute("corso")).getDataFineCorso())%>"
+									value="<%=new SimpleDateFormat("dd/MM/yyyy").format(c.getDataFineCorso())%>"
 									class="form-control">
 							</div>
 						</div>
@@ -117,7 +121,7 @@ if (username != null) {
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-euro"></i>
 								</span> <input type="text" name="costo" id="costo"
-									value="<%=AdminFacade.getInstance().getByCodCorso((long) session.getAttribute("corso")).getCostoCorso()%>"
+									value="<%=c.getCostoCorso()%>"
 									class="form-control">
 							</div>
 						</div>
@@ -131,7 +135,7 @@ if (username != null) {
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-home"></i>
 								</span> <input type="text" name="aula" id="aula"
-									value="<%=AdminFacade.getInstance().getByCodCorso((long) session.getAttribute("corso")).getAulaCorso()%>"
+									value="<%=c.getAulaCorso()%>"
 									maxlength="5" class="form-control">
 							</div>
 						</div>

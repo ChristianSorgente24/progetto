@@ -62,7 +62,7 @@ if (username != null) {
 							</td>
 							<td><a
 								href="/<%=application.getServletContextName()%>/rimuoviCorsista?codCorsista=<%=d[i].getCodCorsista()%>"
-								class="btn btn-danger"> Emilina Corsista <span
+								class="btn btn-danger"> Elimina Corsista <span
 									class="glyphicon glyphicon-minus"></span>
 							</a></td>
 

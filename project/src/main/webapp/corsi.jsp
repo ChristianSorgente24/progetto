@@ -159,7 +159,7 @@ if (username != null) {
 											</form>
 											<form>
 												<button type="submit" formmethod="POST"
-													formaction="/<%=application.getServletContextName()%>/catturacodice?corso=<%=corso.getCodCorso()%>"
+													formaction="/<%=application.getServletContextName()%>/modificacorsi.jsp?corso=<%=corso.getCodCorso()%>"
 													class="btn btn-primary">Modifica corso</button>
 											</form>
 											<h3>Informazioni corso</h3>
