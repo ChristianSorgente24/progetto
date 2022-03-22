@@ -158,9 +158,8 @@ if (username != null) {
 													class="btn btn-danger">Cancella corso</button>
 											</form>
 											<form action="/<%=application.getServletContextName()%>/modificacorsi.jsp" method="POST" >
-											
-												<% session.setAttribute("corso", corso.getCodCorso()); %>
-												<button type="submit" class="btn btn-primary">Modifica corso</button>
+												
+												<button type="submit" class="btn btn-primary" onclick="<% session.setAttribute("corso", corso.getCodCorso()); %>">Modifica corso</button>
 												
 											</form>
 											<h3>Informazioni corso</h3>
