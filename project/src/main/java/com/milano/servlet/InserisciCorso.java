@@ -23,7 +23,6 @@ public class InserisciCorso extends HttpServlet {
 			throws ServletException, IOException {
 
 		Corso corso = new Corso();
-		corso.setCodCorso(Long.parseLong(request.getParameter("codCorso")));
 		corso.setNomeCorso(request.getParameter("nome"));
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		try {

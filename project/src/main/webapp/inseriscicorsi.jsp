@@ -146,18 +146,8 @@
 			<div class="col-md-7 control-label" id="infoCodDocente"></div>
 		</div>
 		
-		<div class="form-group">
-			<label class="col-md-1 control-label">Codice corso</label>
-			<div class="col-md-4 inputGroupContainer">
-				<div class="input-group">
-					<span class="input-group-addon">
-						<i class="glyphicon glyphicon-barcode"></i>
-					</span>
-					<input type="text" name="codCorso" id="codCorso" placeholder="Codice corso..." class="form-control">
-				</div>
-			</div>
-			<div class="col-md-7 control-label" id="infoCodCorso"></div>
-		</div>	
+
+			
 		<div class="row">
 			<div class="col-md-4  col-md-offset-1">
 				<button type="submit" class="btn btn-primary">
