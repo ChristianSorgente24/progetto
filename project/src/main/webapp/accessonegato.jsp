@@ -19,10 +19,11 @@
 			<p>Non hai effettuato il login</p>
 		</div>
 		<button type="submit" class="btn btn-primary"
-			onclick="location.href = 'index.jsp';">
-			<span class="glyphicon glyphicon-home" style="font-size: 15px"></span>&nbsp;Torna
-			alla Home
+			onclick="location.href = 'login.jsp';">
+			<span class="glyphicon glyphicon-log-in" style="font-size: 15px"></span>&nbsp;
+			login
 		</button>
 	</div>
+	<footer class="footer"><%@include file="footer.html"%></footer>
 </body>
 </html>
