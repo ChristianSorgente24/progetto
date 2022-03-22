@@ -25,9 +25,10 @@ public class RimuoviCorsoCorsista extends HttpServlet {
 			corsoCorsistaBC = new CorsoCorsistaBC();
 			corsoCorsistaBC.delete(corsoC);
 		} catch (ClassNotFoundException | DAOException | IOException e) {
-	
 			e.printStackTrace();
+			throw new ServletException(e);
 		}	
+		response.sendRedirect("corsi.jsp");
 			
 		
 	}

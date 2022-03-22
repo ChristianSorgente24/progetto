@@ -29,6 +29,6 @@ public class InserisciCorsoCorsista extends HttpServlet {
 			e.printStackTrace();
 			throw new ServletException(e);
 		}
-		response.sendRedirect("inserimentoriuscito.jsp");
+		response.sendRedirect("corsi.jsp");
 	}
 }

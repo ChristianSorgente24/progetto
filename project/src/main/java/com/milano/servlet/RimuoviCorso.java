@@ -10,17 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.milano.architecture.dao.DAOException;
 import com.milano.businesscomponent.CorsoBC;
 
-@WebServlet("/rimuoviCorso")
+@WebServlet("/rimuovicorso")
 public class RimuoviCorso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		long cod = Long.parseLong(request.getParameter("codCorso"));
+		long cod = Long.parseLong(request.getParameter("corso"));
 		try {
 			CorsoBC.deleteCorso(CorsoBC.getByCodCorso(cod));
 		} catch (DAOException e) {
 			e.printStackTrace();
-		}		
+			throw new ServletException(e);
+		}
+		response.sendRedirect("corsi.jsp");
 	}
 }
