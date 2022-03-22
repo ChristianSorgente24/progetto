@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<button type="submit" class="btn btn-primary"
-			onclick="location.href = 'corsisti.jsp';">
+			onclick="location.href = 'corsisti.jsp';" style="margin-bottom: 10px">
 			<span class="glyphicon glyphicon-arrow-left" style="font-size: 15px"></span>&nbsp;Torna alla Lista Corsisti
 		</button>
 	</div>	
