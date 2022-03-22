@@ -72,8 +72,7 @@ private static AdminFacade cF;
 	}
 	
 	public Corsista[] getAllCorsistiByCodCorso(long codCorso) throws ClassNotFoundException, DAOException, IOException{
-		CorsistaBC cBC = new CorsistaBC();
-		return cBC.getAllByCodCorso(codCorso);
+		return CorsistaBC.getAllByCodCorso(codCorso);
 	}
 	
 //--------------------------------------------------------DELETE---------------------------------------------
@@ -157,7 +156,7 @@ private static AdminFacade cF;
 	
 	
 	
-	public LinkedList<Docente> docenteMaxCorsi()
+	public LinkedList<String> docenteMaxCorsi()
 			throws ClassNotFoundException, DAOException, IOException {
 		StatsUtility st = new StatsUtility();
 		return st.docenteMaxCorsi();

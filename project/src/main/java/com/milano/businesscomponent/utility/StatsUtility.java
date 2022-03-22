@@ -11,12 +11,11 @@ import java.util.LinkedList;
 import com.milano.architecture.dao.CorsoDAO;
 import com.milano.architecture.dao.DAOConstants;
 import com.milano.architecture.dao.DAOException;
-import com.milano.architecture.dao.DocenteDAO;
 import com.milano.architecture.dbaccess.DBAccess;
 import com.milano.businesscomponent.CorsistaBC;
+import com.milano.businesscomponent.DocenteBC;
 import com.milano.businesscomponent.model.Corsista;
 import com.milano.businesscomponent.model.Corso;
-import com.milano.businesscomponent.model.Docente;
 
 public class StatsUtility implements DAOConstants{
 	private static Connection conn;
@@ -105,15 +104,19 @@ public class StatsUtility implements DAOConstants{
 		}
 	}
 	
-	public  LinkedList<Docente> docenteMaxCorsi() throws DAOException {
-		LinkedList<Docente> docenti = new LinkedList<Docente>(); 
-		long codice = 0;
+	public  LinkedList<String> docenteMaxCorsi() throws DAOException, ClassNotFoundException, IOException {
+		LinkedList<String> docenti = new LinkedList<String>(); 
+		
 		try {
 			PreparedStatement stmt = conn.prepareStatement(SELECT_DOCENTE_MAX_CORSI);
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				codice = rs.getLong(1);
-				docenti.add(DocenteDAO.getFactory().getByCod(conn, codice));
+				DocenteBC dBC = new DocenteBC();
+				String nome = dBC.getByCod(rs.getLong(1)).getNomeDocente();
+				String cognome = dBC.getByCod(rs.getLong(1)).getCognomeDocente();
+				
+				long numeroCorsi = rs.getLong(2);
+				docenti.add(nome+" "+cognome+" segue "+numeroCorsi+" corsi");
 			}
 			return docenti;
 		} catch (SQLException sql) {

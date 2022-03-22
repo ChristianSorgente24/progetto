@@ -6,7 +6,7 @@ public interface DAOConstants {
 	String SELECT_CORSISTA_SEQ = "Select CodGeneratorCorsista_seq.nextval from dual";
 	
 	//CRUD corsista
-	String SELECT_CORSISTA = "Select * from corsista";
+	String SELECT_CORSISTA = "Select * from corsista order by cognomeCorsista";
 	String UPDATE_CORSISTA = "Update corsista set nomeCorsista = ?, cognomeCorsista = ?, precedentiFormativi = ? where codCorsista = ?";
 	String DELETE_CORSISTA = "Delete from corsista where codCorsista = ?";
 	String SELECT_CORSISTA_BYCOD = "select * from corsista where codCorsista = ?";
@@ -46,7 +46,7 @@ public interface DAOConstants {
 	String SELECT_NUM_COMMENTI = "SELECT count(commentiCorso) from corsocorsista where codCorso = ?";
 	//N6 -> SELECT_CORSISTA Elenco corsisti
 	//N7 Docente che può tenere più tipologie di corso
-	String SELECT_DOCENTE_MAX_CORSI = "select codDocente from corso group by codDocente	order by count(*) desc";
+	String SELECT_DOCENTE_MAX_CORSI = "select codDocente ,count(*) from corso group by codDocente order by count(*) desc";
 	//N8 Corsi con posti disponibili
 	String SELECT_CORSI_DISPONIBILI = "select corso.codCorso from corso left join corsocorsista on CORSOCORSISTA.codCorso = CORSO.codCorso group by corso.codCorso having count(*) < 12";
 	

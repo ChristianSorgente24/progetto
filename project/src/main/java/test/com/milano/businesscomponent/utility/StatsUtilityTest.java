@@ -11,7 +11,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 import com.milano.businesscomponent.model.Corsista;
 import com.milano.businesscomponent.model.Corso;
-import com.milano.businesscomponent.model.Docente;
 import com.milano.businesscomponent.utility.StatsUtility;
 
 
@@ -95,7 +94,7 @@ class StatsUtilityTest {
 	void testDocenteMaxCorsi() {
 		try {
 			StatsUtility st = new StatsUtility();
-			LinkedList<Docente> docenti = st.docenteMaxCorsi(); 
+			LinkedList<String> docenti = st.docenteMaxCorsi(); 
 				System.out.println(docenti.toString());
 			
 		} catch(Exception exc) {

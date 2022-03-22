@@ -35,7 +35,7 @@
 				Date ultimoCorso = AdminFacade.getInstance().inizioUltimoCorso();
 				SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 				Double mediaCorsi = AdminFacade.getInstance().durataMediaCorsi();
-				LinkedList<Docente> docenteMax = AdminFacade.getInstance().docenteMaxCorsi();
+				LinkedList<String> docenteMax = AdminFacade.getInstance().docenteMaxCorsi();
 				%>
 				<table class="table table-striped">
 					<tbody>
@@ -52,7 +52,7 @@
 							<%
 							} else {
 							%>
-							<td>non esiste nessun corso</td>
+							<td>Non sono presenti corsi</td>
 							<%
 							}
 							%>
@@ -64,37 +64,12 @@
 						</tr>
 						<tr>
 							<td>Durata media dei corsi:</td>
-							<td><%=mediaCorsi%></td>
+							<td><%=mediaCorsi%> giorni</td>
 						</tr>
 
 						<tr>
 							<td>Docente con pi&ugrave; corsi:</td>
-							<td>
-								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th>Nome</th>
-											<th>Cognome</th>
-											<th>CV</th>
-											<th>Codice</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<%
-											for (int i = 0; i < docenteMax.size(); i++) {
-											%>
-											<td><%=docenteMax.get(i).getNomeDocente()%></td>
-											<td><%=docenteMax.get(i).getCognomeDocente()%></td>
-											<td><a href="#"><%=docenteMax.get(i).getCvDocente()%></a></td>
-											<td><%=docenteMax.get(i).getCodDocente()%></td><br>
-											<%
-											}
-											%>
-										</tr>
-									</tbody>
-								</table>
-							</td>
+							<td><%= docenteMax.getFirst() %></td>
 
 						</tr>
 
