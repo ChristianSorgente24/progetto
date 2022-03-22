@@ -39,6 +39,7 @@
 					</span>
 					<input type="text" name="nome" id="nome" placeholder="<%= AdminFacade.getInstance().getByCodCorso((long)session.getAttribute("corso")).getNomeCorso() %>" 
 					class="form-control">
+					<input type="hidden" name="codice" value ="<%= AdminFacade.getInstance().getByCodCorso((long)session.getAttribute("corso")).getCodCorso() %>">
 				</div>
 			</div>
 			<div class="col-md-7 control-label" id="infoNome"></div>

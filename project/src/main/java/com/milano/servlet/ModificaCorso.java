@@ -18,8 +18,10 @@ import com.milano.businesscomponent.model.Corso;
 public class ModificaCorso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		Corso corso = new Corso();
+		corso.setCodCorso(Long.parseLong(request.getParameter("codice")));
 		corso.setNomeCorso(request.getParameter("nome"));
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		try {
