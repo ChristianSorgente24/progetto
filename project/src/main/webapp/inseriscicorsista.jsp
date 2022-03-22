@@ -74,7 +74,7 @@ if (username != null) {
 					<div class="row">
 						<div class="col-md-4 col-md-offset-1">
 							<button type="submit" class="btn btn-primary">
-								Aggiungi&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+								Aggiungi&nbsp;<span class="glyphicon glyphicon-ok"></span>
 							</button>
 						</div>
 					</div>
