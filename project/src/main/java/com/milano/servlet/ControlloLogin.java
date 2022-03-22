@@ -31,9 +31,9 @@ public class ControlloLogin extends HttpServlet {
 		System.out.println("Username=" + username);
 		System.out.println("CodAdmin=" + codAdmin);*/
 
-		if (count == 4) {
+		if (count == 5) {
+			response.sendRedirect("accessoerrato.jsp");
 			session.setAttribute("countLogin", 0);
-			response.sendRedirect("accessonegato.jsp");
 		} else if (username != null) {
 			try {
 				LoginUtility lU = new LoginUtility();
@@ -57,7 +57,7 @@ public class ControlloLogin extends HttpServlet {
 				throw new ServletException(exc.getMessage());
 			}
 		} else
-			response.sendRedirect("accessonegato.jsp");
+			response.sendRedirect("accessoerrato.jsp");
 
 	}
 }

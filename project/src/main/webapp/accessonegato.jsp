@@ -16,7 +16,7 @@
 				Accesso negato <span class="glyphicon glyphicon-remove-circle"
 					style="font-size: 35px"></span>
 			</h1>
-			<p>Hai esaurito i 5 tentativi a tua disposizione</p>
+			<p>Non hai effettuato il login</p>
 		</div>
 		<button type="submit" class="btn btn-primary"
 			onclick="location.href = 'index.jsp';">
