@@ -34,17 +34,13 @@ if (exception instanceof ClassNotFoundException) {
 <body>
 	<jsp:include page="nav.jsp" />
 	<div class="container" style="margin-top: 20px">
-		<div class="panel panel-danger">
-			<div class="panel-heading">
+		<div class="jumbotron">
 			<h1><%=titolo%>
 				<span class="glyphicon glyphicon-remove-circle"
 					style="font-size: 35px"></span>
 			</h1>
-			
-				<strong><%= descrizione %></strong>
-			</div>
+			<p><%=descrizione%></p>
 		</div>
-		
 		<button type="submit" class="btn btn-primary"
 			onclick="location.href = 'index.jsp';">
 			<span class="glyphicon glyphicon-home" style="font-size: 15px"></span>&nbsp;Torna
