@@ -45,7 +45,7 @@ if (username != null) {
 								<tr>
 									<td><%=d[i].getNomeDocente()%></td>
 									<td><%=d[i].getCognomeDocente()%></td>
-									<td><%=d[i].getCvDocente()%></td>
+									<td><a href ="#"><%=d[i].getCvDocente()%></a></td>
 									<td><%=d[i].getCodDocente()%></td>
 								</tr>
 								<%
