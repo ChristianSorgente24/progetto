@@ -38,8 +38,8 @@ codCorso int,
 codCorsista int,
 commentiCorso varchar2(100),
 constraint p_corsocorsista primary key(codCorso,codCorsista),
-constraint f_codCorso foreign key(codCorso) references corso(codCorso),
-constraint f_codCorsista foreign key(codCorsista) references corsista(codCorsista));
+constraint f_codCorso foreign key(codCorso) references corso(codCorso) on delete cascade,
+constraint f_codCorsista foreign key(codCorsista) references corsista(codCorsista) on delete cascade);
 
 create sequence CodGeneratorCorso_seq;
 create sequence CodGeneratorCorsista_seq;
