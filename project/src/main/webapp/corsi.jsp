@@ -35,13 +35,25 @@ if (username != null) {
 						<a style="margin-top: 20px; margin-bottom: 20px;" 
 							href="/<%=application.getServletContextName()%>/inseriscicorsi.jsp" class="btn btn-success">
 							Inserisci nuovo corso  <span class="glyphicon glyphicon-plus"></span></a>
+							<form class="form-inline" action = "/<%=application.getServletContextName()%>/corsi.jsp">
+    							<input name = "q" class="form-control mr-sm-2" type="search" placeholder="Cerca corso" aria-label="Search">
+    							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca <span class="glyphicon glyphicon-search"></span></button>
+  							</form>
 						<div class="panel-group" id="accordion" role="tablist"
 							aria-multiselectable="true">
 							<!--modello accordion-->
 							<%
 							SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-
-							List<Corso> corsi = Arrays.asList(AdminFacade.getInstance().getAllCorso());
+							String query = request.getParameter("q");
+							System.out.println("adad " + query);
+							List<Corso> corsi;
+							//if(query.equals("") || query == null){
+							if(query == null || query.equals("")){
+								corsi = Arrays.asList(AdminFacade.getInstance().getAllCorso());
+							}else{
+								corsi = Arrays.asList(AdminFacade.getInstance().searchCorso(query));
+							}
+							
 							List<Corso> corsiDisponibili = AdminFacade.getInstance().corsiDisponibili();
 							List<Corsista> corsisti = Arrays.asList(AdminFacade.getInstance().getAllCorsista());
 
